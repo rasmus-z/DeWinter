@@ -76,7 +76,7 @@ namespace Ambition
 				OpinionIndicator.enabled = setEnabled;
 				InterestIcon.enabled = setEnabled;
                 InterestIconBorder.enabled = setEnabled;
-			}
+            }
 
 			if (setEnabled)
 			{
