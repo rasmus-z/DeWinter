@@ -3,29 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SliderCheck : MonoBehaviour {
-    //This script is used to determine if the text is long enough to require a scrollbar/slider
-
-
-    public GameObject sliderObject;
-
-    public RectTransform scrollRectTransform;
-    public RectTransform contentRectTransform;
-
-    public void OnRectTransformDimensionsChange()
+namespace Ambition
+{
+    public class SliderCheck : MonoBehaviour
     {
-        SliderNeededCheck();
-    }
+        //This script is used to determine if the text is long enough to require a scrollbar/slider
+        public RectTransform Slider;
+        private float _sliderHeight;
 
-    private void SliderNeededCheck() //Do we need a slider at all?
-    {
-        if (scrollRectTransform.rect.height >= contentRectTransform.rect.height)
+        void Awake()
         {
-            sliderObject.SetActive(false);
+            _sliderHeight = Slider.rect.height;
+            Slider.gameObject.SetActive(false);
         }
-        else
+
+        public void OnRectTransformDimensionsChange()
         {
-            sliderObject.SetActive(true);
+            bool showSlider = this.GetComponent<RectTransform>().rect.height > _sliderHeight;
+            Slider.gameObject.SetActive(showSlider);
         }
     }
 }

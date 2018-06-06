@@ -13,20 +13,17 @@ namespace Ambition
 		private ModelSvc _models = App.Service<ModelSvc>();
 		private MessageSvc _messages = App.Service<MessageSvc>();
 		private PartyModel _model;
-		private Slider _meter;
-
-		public Text Label;
+		private Text _label;
 
 		void Awake()
 		{
-			_meter = GetComponent<Slider>();
+			_label = GetComponent<Text>();
 			_model = _models.GetModel<PartyModel>();
 		}
 
 		void Start ()
 		{
-			_meter.value = 0f;
-			Label.text = "New Remark In: " + _model.FreeRemarkCounter.ToString();
+			_label.text = _model.FreeRemarkCounter.ToString();
 		}
 
 		void OnEnable()
@@ -37,30 +34,13 @@ namespace Ambition
 		void OnDisable()
 		{
 			_messages.Unsubscribe<int>(PartyConstants.TURN, HandleTurn);
-			StopAllCoroutines();
 		}
 
 		private void HandleTurn(int turn)
 		{
 			int total = _model.FreeRemarkCounter;
 			turn = (turn-1)%total;
-			float fillAmount = (float)(turn)/(float)(total-1);
-			Label.text = "New Remark In: " + (total - turn).ToString();
-			
-			StopAllCoroutines();
-			if (fillAmount < _meter.value) _meter.value = fillAmount;
-			else StartCoroutine(InterpValue(fillAmount));
-		}
-
-		IEnumerator InterpValue(float value)
-		{
-			float v0 = _meter.value;
-			for (float t = 0; t < INTERP_TIME; t+=Time.deltaTime)
-			{
-				_meter.value = (1f - t/INTERP_TIME)*v0 + t*value/INTERP_TIME;
-				yield return null;
-			}
-			_meter.value = value;
+			_label.text = (total - turn).ToString();
 		}
 	}
 }

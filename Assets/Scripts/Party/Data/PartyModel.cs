@@ -8,11 +8,17 @@ namespace Ambition
 {
 	public class PartyModel : DocumentModel, IInitializable, IDisposable
 	{
-		public int DrinkAmount;
-
 		public PartyModel(): base("PartyData") {}
 
-		public PartyVO Party;
+		private PartyVO _party;
+		public PartyVO Party
+		{
+			get { return _party; }
+			set {
+				_party = value;
+				AmbitionApp.SendMessage<PartyVO>(_party);
+			}
+		}
 
 		public bool IsAmbush=false;
 
@@ -76,33 +82,11 @@ namespace Ambition
 			}
 		}
 
-		protected float ApplyBuffs(string id, float value)
-		{
-			List<ModifierVO> mods;
-			float result = value;
-			if (Modifiers.TryGetValue(id, out mods))
-			{
-				foreach (ModifierVO mod in mods)
-				{
-					result += value*(mod.Multiplier - 1.0f) + mod.Bonus;
-				}
-			}
-			return result; 
-		}
-
-		[JsonProperty("maxPlayerDrinkAmount")]
-		protected int _maxPlayerDrinkAmount;
-
 		[JsonProperty("guest_difficulty")]
 		public GuestDifficultyVO[] GuestDifficultyStats;
 
-		public int MaxDrinkAmount
-		{
-			get
-			{
-				return (int)ApplyBuffs(GameConsts.DRINK, _maxPlayerDrinkAmount);
-			}
-		}
+		[JsonProperty("maxPlayerDrinkAmount")]
+		public int MaxDrinkAmount;
 
 		[JsonProperty("topic_list")]
 		public string[] Interests;
@@ -133,7 +117,7 @@ namespace Ambition
 				AmbitionApp.SendMessage<int>(GameConsts.INTOXICATION, _intoxication);
 			}
 		}
-		public int MaxIntoxication = 3;
+		public int MaxIntoxication = 100;
 
 		[JsonProperty("parties")]
 		public PartyVO[] Parties;
