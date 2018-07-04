@@ -108,6 +108,27 @@ namespace Ambition
 		[JsonProperty("ambushHandSize")]
 		public int AmbushHandSize = 3;
 
+		private GuestActionVO[] _guestActions;
+		[JsonProperty("guest_actions")]
+		public GuestActionVO[] GuestActions
+		{
+			get { return _guestActions; }
+			set
+			{
+				_guestActions = value;
+				GuestActionFactory factory = new GuestActionFactory();
+				foreach(GuestActionVO action in value)
+					factory.Actions[action.Type] = action;
+				AmbitionApp.RegisterFactory<string, GuestActionVO>(factory);
+			}
+		}
+
+		[JsonProperty("guest_action_chance")]
+		public int[] GuestActionChance;
+		[JsonProperty("charmed_guest_action_chance")]
+		public int[] CharmedGuestActionChance;
+
+
 		private int _intoxication;
 		public int Intoxication
 		{
