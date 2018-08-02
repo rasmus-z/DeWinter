@@ -12,6 +12,7 @@ namespace Ambition
 {
 	public class IncidentCollection : ScriptableObject
 	{
+        public IncidentVO Incident;
 		public IncidentVO[] Incidents;
 
 #if (UNITY_EDITOR)
@@ -48,7 +49,7 @@ namespace Ambition
 		private ReorderableList _list;
 		private bool _dirty=false;
 		private SerializedProperty _property;
-		
+
 		private void OnEnable()
 		{
         	_list = new ReorderableList(serializedObject, 
@@ -67,9 +68,22 @@ namespace Ambition
 			serializedObject.Update();
 			if (!DrawComponent()) _lastType = null;
 			if (_lastType == null) _list.DoLayoutList();
-        	serializedObject.ApplyModifiedProperties();
-			if (_dirty) IncidentEditor.InspectorUpdated();
-			_dirty = false;
+            serializedObject.ApplyModifiedProperties();
+
+            if (GUILayout.Button("Make Timeline"))
+            {
+                IncidentCollection collection = target as IncidentCollection;
+                Timeline timeline = Util.ScriptableObjectUtil.CreateScriptableObject<Timeline>("Timeline");
+                IncidentConfig[] configs = new IncidentConfig[collection.Incidents.Length];
+                for (int i = configs.Length - 1; i >= 0; i--)
+                {
+                    configs[i] = IncidentConfig.CreateIncident(collection.Incidents[i]);
+                }
+                timeline.SetIncidentConfigs(configs);
+                AssetDatabase.SaveAssets();
+            }
+
+            _dirty = false;
 	    }
 
 	    private bool DrawComponent()
@@ -77,6 +91,7 @@ namespace Ambition
 			if (serializedObject == null || _list == null || _list.index < 0) return false;
 			int index = serializedObject.FindProperty(IncidentCollection.SELECTED_COMPONENT).intValue;
 			if (index < 0) return false;
+
 			SerializedProperty prop = serializedObject.FindProperty("Incidents");
 			if (_list.index >= prop.arraySize) return false;
 			bool selectText = _lastIndex != index;
@@ -112,12 +127,7 @@ namespace Ambition
 		private void DrawIncident(Rect rect, int index, bool isActive, bool isFocused)
 		{
 			SerializedProperty prop = _list.serializedProperty.GetArrayElementAtIndex(index);
-
-			Rect rLabel = new Rect(rect.x, rect.y, rect.width-DROPDOWN_WIDTH, rect.height-SPACER);
-			Rect dLabel = new Rect(rect.x + rect.width - DROPDOWN_WIDTH + SPACER, rect.y, DROPDOWN_WIDTH-SPACER, rect.height-SPACER);
-
-			EditorGUI.PropertyField(rLabel, prop.FindPropertyRelative("Name"), GUIContent.none);
-			EditorGUI.PropertyField(dLabel, prop.FindPropertyRelative("Setting"), GUIContent.none);
+			EditorGUI.PropertyField(rect, prop.FindPropertyRelative("Name"), GUIContent.none);
 		}
 
 		private void SelectIncident(ReorderableList list)
@@ -125,7 +135,7 @@ namespace Ambition
 			serializedObject.FindProperty(IncidentCollection.SELECTED_INCIDENT).intValue = _list.index;
 			serializedObject.FindProperty(IncidentCollection.SELECTED_COMPONENT).intValue = -1;
 			serializedObject.ApplyModifiedProperties();
-			IncidentEditor.Show(serializedObject);
+            //Util.GraphEditorWindow<IncidentConfig>.Show(serializedObject.targetObject);
 		}
 
 		private void CreateIncident(ReorderableList list)

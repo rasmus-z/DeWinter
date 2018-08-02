@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,14 +19,17 @@ namespace Ambition
 			AmbitionApp.RegisterLink<CheckIncidentLink>("GameController", "InitGame", "InvokeIncidentMachine");
 			AmbitionApp.RegisterLink("GameController", "InitGame", "InvokeEstateMachine");
 
-			AmbitionApp.InvokeMachine("GameController");
+            AmbitionApp.InvokeMachine("GameController");
+
 #if (UNITY_EDITOR)			
 			if (!Input.GetKey(KeyCode.LeftAlt) && !Input.GetKey(KeyCode.RightAlt))
 #endif
 			{
-				IncidentModel emod = AmbitionApp.RegisterModel<IncidentModel>();
-				emod.Incident = emod.FindEvent("Yvette");
+                IncidentModel emod = AmbitionApp.RegisterModel<IncidentModel>();
+                emod.Incident = emod.Find("Yvette's Prologue");
 			}
+
+            AmbitionApp.InvokeMachine("GameController");
 		}
 	}
 }

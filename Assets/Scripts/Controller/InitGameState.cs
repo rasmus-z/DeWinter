@@ -15,7 +15,6 @@ namespace Ambition
 			AmbitionApp.RegisterModel<CalendarModel>();
 			AmbitionApp.RegisterModel<PartyModel>();
 			AmbitionApp.RegisterModel<CharacterModel>();
-			AmbitionApp.RegisterModel<IncidentModel>();
 			AmbitionApp.RegisterModel<QuestModel>();
 			AmbitionApp.RegisterModel<MapModel>();
             AmbitionApp.RegisterModel<ConversationModel>();
@@ -42,6 +41,7 @@ namespace Ambition
 			AmbitionApp.RegisterCommand<EquipItemCmd, ItemVO>(InventoryMessages.EQUIP);
 			AmbitionApp.RegisterCommand<UnequipItemCmd, ItemVO>(InventoryMessages.UNEQUIP);
 			AmbitionApp.RegisterCommand<UnequipSlotCmd, string>(InventoryMessages.UNEQUIP);
+            AmbitionApp.RegisterCommand<StartIncidentCmd, string>(IncidentMessages.START_INCIDENT);
 
 			// Party
 			AmbitionApp.RegisterCommand<SelectGuestCmd, GuestVO>(PartyMessages.GUEST_SELECTED);
@@ -58,7 +58,7 @@ namespace Ambition
 			AmbitionApp.RegisterCommand<RoomChoiceCmd, RoomVO>();
 			AmbitionApp.RegisterCommand<EndPartyCmd>(PartyMessages.LEAVE_PARTY);
 
-			AmbitionApp.RegisterCommand<PayDayCmd, DateTime>();
+            AmbitionApp.RegisterCommand<PayDayCmd, DateTime>();
 			AmbitionApp.RegisterCommand<RestockMerchantCmd, DateTime>();
 			AmbitionApp.RegisterCommand<CheckUprisingDayCmd, DateTime>();
 			AmbitionApp.RegisterCommand<CheckLivreCmd, int>(GameConsts.LIVRE);
@@ -116,6 +116,7 @@ namespace Ambition
 			AmbitionApp.RegisterState<MomentState>("IncidentController", "Moment");
 			AmbitionApp.RegisterState("IncidentController", "CheckEndIncident");
 			AmbitionApp.RegisterState<FadeOutState>("IncidentController", "EndIncident");
+            AmbitionApp.RegisterState("IncidentController", "CheckNextIncident");
 			AmbitionApp.RegisterState<InvokeMachineState, string>("IncidentController", "InvokeEstate", "EstateController");
 
 			AmbitionApp.RegisterLink("IncidentController", "LoadIncident", "EnterIncident");
@@ -124,7 +125,9 @@ namespace Ambition
 			AmbitionApp.RegisterLink<WaitForMomentLink>("IncidentController", "Moment", "CheckEndIncident");
 			AmbitionApp.RegisterLink<CheckEndIncidentLink>("IncidentController", "CheckEndIncident", "EndIncident");
 			AmbitionApp.RegisterLink("IncidentController", "CheckEndIncident", "Moment");
-			AmbitionApp.RegisterLink<AmbitionDelegateLink, string>("IncidentController", "EndIncident", "InvokeEstate", GameMessages.FADE_OUT_COMPLETE);
+            AmbitionApp.RegisterLink<AmbitionDelegateLink, string>("IncidentController", "EndIncident", "CheckNextIncident", GameMessages.FADE_OUT_COMPLETE);
+            AmbitionApp.RegisterLink<CheckIncidentLink>("IncidentController", "CheckNextIncident", "EnterIncident");
+            AmbitionApp.RegisterLink("IncidentController", "CheckNextIncident", "InvokeEstate");
 
 
 			// TUTORIAL STATES.
