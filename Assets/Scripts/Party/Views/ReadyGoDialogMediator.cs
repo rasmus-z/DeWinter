@@ -11,13 +11,12 @@ namespace Ambition
 	public class ReadyGoDialogMediator : DialogView, IPointerClickHandler
 	{
 		public const string DIALOG_ID = "READY_GO";
-		public Text dialogText;
-		public Text PromptText;
+        public Text DialogText;
 		void Start()
 		{
 			LocalizationModel model = AmbitionApp.GetModel<LocalizationModel>();
 			string[] conversationIntroList = model.GetList("conversation_intro");
-			dialogText.text = conversationIntroList[Util.RNG.Generate(conversationIntroList.Length)];
+			DialogText.text = conversationIntroList[Util.RNG.Generate(conversationIntroList.Length)];
 		}
 
 		public void OnPointerClick(PointerEventData eventData)

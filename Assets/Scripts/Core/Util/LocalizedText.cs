@@ -8,15 +8,20 @@ public class LocalizedText : MonoBehaviour
 {
 	private Text _text;
 	private string _phrase;
+    private 
 	
 	void Awake ()
 	{
 		_text = GetComponent<Text>();
 		Debug.Assert(_text != null, "No text field found on GameObject \"" + this.gameObject.name + "\"");
-		Phrase = _text.text;
 	}
 
-	public string Phrase
+    private void Start()
+    {
+        Phrase = _text.text;
+    }
+
+    public string Phrase
 	{
 		get { return _phrase; }
 		set {

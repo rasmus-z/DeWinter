@@ -65,5 +65,12 @@ namespace Core
 			}
 			return value;
 		}
-	}
+
+/*
+IEnumerator GetForm()
+{
+    UnityWebRequest www = UnityEngine.Networking.UnityWebRequest.Get("https://sheets.googleapis.com/v4/spreadsheets/" + SPREADSHEED_ID + "/values/Sheet1!A1:D5");
+    yield return www.SendWebRequest();
+    _phrases = Newtonsoft.Json.JsonConvert.DeserializeObject<Phrases>(www.downloadHandler.text);
 }
+*/
