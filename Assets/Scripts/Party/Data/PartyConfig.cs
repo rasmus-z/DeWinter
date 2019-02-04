@@ -10,6 +10,9 @@ namespace Ambition
     [Serializable]
     public class PartyConfig : ScriptableObject
     {
+        public IncidentConfig IntroIncident;
+        public IncidentConfig ExitIncident;
+
         [SerializeField]
         private PartyVO _party;
 
@@ -61,11 +64,19 @@ namespace Ambition
                 EditorGUILayout.EndHorizontal();
             }
 
+            EditorGUILayout.LabelField("Invitation Text (Leave Blank to auto-generate)");
+            SerializedProperty text = party.FindPropertyRelative("Invitation");
+            text.stringValue = GUILayout.TextArea(text.stringValue);
+
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("IntroIncident"), true);
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("ExitIncident"), true);
             EditorGUILayout.PropertyField(party.FindPropertyRelative("Faction"), true);
             EditorGUILayout.PropertyField(party.FindPropertyRelative("Importance"), true);
-            party.FindPropertyRelative("RSVP").enumValueIndex =
-                     EditorGUILayout.Toggle("Immediate", party.FindPropertyRelative("RSVP").enumValueIndex == (int)RSVP.Accepted)
-                     ? (int)RSVP.Accepted : (int)RSVP.New;
+
+            bool required = party.FindPropertyRelative("RSVP").enumValueIndex == (int)RSVP.Required;
+            required = EditorGUILayout.Toggle("Required?", required);
+            party.FindPropertyRelative("RSVP").enumValueIndex = required ? (int)RSVP.Required : (int)RSVP.New;
+
             EditorGUILayout.PropertyField(party.FindPropertyRelative("MapID"), true);
             EditorGUILayout.PropertyField(party.FindPropertyRelative("Turns"), true);
             EditorGUILayout.PropertyField(party.FindPropertyRelative("Requirements"), true);

@@ -10,15 +10,18 @@ namespace Ambition
     [Serializable]
     public class PartyVO : ICalendarEvent
     {
-        public string ID;           // ID also corresponds with the localization phrases
+        public string ID { get; private set; }      // ID also corresponds with the localization phrases
         public string Name;         // Assigned upon creation
         public string Description;  // Assigned upon creation
-        public string Invitiation;  // Assigned upon creation
+        public string Invitation;  // Configured or Assigned upon creation
 
         public string Faction;
         public PartySize Importance; //Used for party size. 0 means
         public RSVP RSVP = RSVP.New; //0 means no RSVP yet, 1 means Attending and -1 means Decline
         public DateTime Date { get; set; }
+
+        public IncidentVO IntroIncident { get; set; }
+        public IncidentVO ExitIncident { get; set; }
 
         [JsonProperty("invitation_date")]
         public DateTime InvitationDate;

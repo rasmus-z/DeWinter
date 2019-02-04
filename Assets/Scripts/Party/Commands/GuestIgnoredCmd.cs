@@ -11,8 +11,9 @@ namespace Ambition
             // Don't bother if the guest is already locked in
             if (guest.State == GuestState.Bored)
             {
-                guest.Opinion -= AmbitionApp.GetModel<PartyModel>().BoredomPenalty;
-                AmbitionApp.SendMessage(PartyMessages.BURN_REMARKS, 1);
+                PartyModel partyModel = AmbitionApp.GetModel<PartyModel>();
+                guest.Opinion -= partyModel.BoredomPenalty;
+                AmbitionApp.SendMessage(PartyMessages.BURN_REMARKS, partyModel.BoredomRemarkPenalty);
                 AmbitionApp.SendMessage(PartyMessages.GUEST_REACTION_BORED, guest);
             }
         }

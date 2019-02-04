@@ -10,7 +10,7 @@ using UnityEditor;
 namespace Util  
 {
     [Serializable]
-    public class DirectedGraph
+    public class DirectedGraph : IDisposable
     {
         public Vector2Int[] Links;
 
@@ -78,6 +78,14 @@ namespace Util
             Array.Copy(array, result, array.Length);
             return result;
         }
+
+        public virtual void Dispose()
+        {
+            Links = null;
+        #if (UNITY_EDITOR)
+            Positions = null;
+        #endif
+        }
     }
 
     [Serializable]
@@ -142,6 +150,20 @@ namespace Util
             {
                 int index = Array.IndexOf(Nodes, node);
                 DeleteNode(index);
+            }
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            if (Nodes != null)
+            {
+                foreach (T node in Nodes)
+                {
+                    if (node is IDisposable)
+                        ((IDisposable)node).Dispose();
+                }
+                Nodes = null;
             }
         }
     }
@@ -250,6 +272,17 @@ namespace Util
                 LinkData = linkData.ToArray();
             }
             base.DeleteNode(nodeIndex);
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            if (LinkData != null)
+            {
+                IDisposable[] disposables = LinkData.OfType<IDisposable>().ToArray();
+                Array.ForEach(disposables, l => l.Dispose());
+                LinkData = null;
+            }
         }
     }
 }

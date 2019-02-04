@@ -1,19 +1,15 @@
 using UFlow;
+using System.Linq;
 
 namespace Ambition
 {
-    public class CheckEndIncidentLink : ULink
+    public class CheckMomentLink : ULink
     {
         public override bool Validate()
         {
             CalendarModel model = AmbitionApp.GetModel<CalendarModel>();
-            if (model.Moment == null)
-            {
-                model.Incident = null;
-                model.Moment = null;
-                return true;
-            }
-            return false;
+            IncidentVO incident = model.GetEvents<IncidentVO>().Where(e=>!model.IsComplete(e)).FirstOrDefault();
+            return (incident != null && incident.Moment != null);
         }
     }
 }

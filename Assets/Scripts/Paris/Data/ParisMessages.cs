@@ -9,6 +9,7 @@ namespace Ambition
         public const string SELECT_LOCATION = "SELECT_LOCATION";
         public const string GO_TO_LOCATION = "GO_TO_LOCATION";
         public const string LOAD_LOCATION = "LOAD_LOCATION";
+        public const string LEAVE_LOCATION = "LEAVE_LOCATION";
         public const string REST = "REST";
         public const string ESTATE = "ESTATE";
     }

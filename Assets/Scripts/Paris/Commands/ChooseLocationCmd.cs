@@ -16,7 +16,7 @@ namespace Ambition
                     if (location != null && incident != null && (!location.Visited || !incident.OneShot))
                     {
                         CalendarModel calendar = AmbitionApp.GetModel<CalendarModel>();
-                        calendar.Incident = location.IntroIncidentConfig.Incident;
+                        calendar.Schedule(location.IntroIncidentConfig.Incident, calendar.Today);
                     }
                     location.Visited = true;
                 }

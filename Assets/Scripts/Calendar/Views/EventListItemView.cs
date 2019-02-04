@@ -28,7 +28,7 @@ namespace Ambition
                         {"$IMPORTANCE",AmbitionApp.GetString("party_importance." + ((int)_party.Importance).ToString())},
                         {"$REASON",_party.Description}});
 				FactionIcon.sprite = FactionSpriteConfig.GetSprite(_party.Faction);
-                Highlight.enabled = _party.RSVP == RSVP.Accepted;
+                Highlight.enabled = _party.RSVP == RSVP.Accepted || _party.RSVP == RSVP.Required;
                 Strikethrough.enabled = _party.RSVP == RSVP.Declined;
 			}
 		}

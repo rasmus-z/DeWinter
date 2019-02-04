@@ -12,6 +12,7 @@ namespace Ambition
 	    private Text _text;
 		private int _option;
 		private Button _btn;
+        private TransitionVO _transition;
 
 	    void Awake()
 	    {
@@ -31,13 +32,14 @@ namespace Ambition
 		private void HandleTransitions(TransitionVO[] transitions)
 	    {
 			bool show = _option < transitions.Length && (transitions.Length > 1 || transitions[0].Text.Length > 0);
-			if (show) _text.text = transitions[_option].Text;
-			this.gameObject.SetActive(show);
+            _transition = show ? transitions[_option] : null;
+            if (show) _text.text = _transition.Text;
+			gameObject.SetActive(show);
 	    }
 
 		private void OnClick()
 		{
-			AmbitionApp.SendMessage<int>(IncidentMessages.INCIDENT_OPTION, _option);
+            AmbitionApp.SendMessage(IncidentMessages.INCIDENT_OPTION, _transition);
 		}
 	}
 }

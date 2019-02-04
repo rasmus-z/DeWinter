@@ -25,18 +25,44 @@ MonoBehaviour:
     - {x: 5, y: 8}
     - {x: 8, y: 9}
     - {x: 9, y: 10}
+    - {x: 0, y: 11}
+    - {x: 11, y: 2}
+    - {x: 11, y: 3}
+    - {x: 11, y: 4}
+    - {x: 1, y: 12}
+    - {x: 13, y: 2}
+    - {x: 13, y: 3}
+    - {x: 13, y: 4}
+    - {x: 12, y: 14}
+    - {x: 14, y: 15}
+    - {x: 15, y: 2}
+    - {x: 15, y: 3}
+    - {x: 15, y: 4}
+    - {x: 11, y: 17}
+    - {x: 17, y: 18}
+    - {x: 18, y: 13}
     Positions:
     - {x: 0, y: 0}
-    - {x: 1, y: 87}
-    - {x: -233, y: 175}
-    - {x: 3, y: 179}
-    - {x: 243, y: 178}
-    - {x: 0, y: 363}
-    - {x: 1, y: 260}
-    - {x: 239, y: 264}
-    - {x: -1, y: 432}
-    - {x: -2, y: 500}
-    - {x: -3, y: 571}
+    - {x: -135, y: 116}
+    - {x: -235, y: 220}
+    - {x: -1, y: 231}
+    - {x: 252, y: 232}
+    - {x: -9, y: 413}
+    - {x: 1, y: 300}
+    - {x: 249, y: 296}
+    - {x: -3, y: 477}
+    - {x: -13, y: 552}
+    - {x: -8, y: 620}
+    - {x: 136, y: 119}
+    - {x: -394, y: 11}
+    - {x: 481, y: 164}
+    - {x: -417, y: 81}
+    - {x: -436, y: 150}
+    - {x: -436, y: 150}
+    - {x: 496, y: 29}
+    - {x: 496, y: 102}
+    - {x: 496, y: 102}
+    - {x: 496, y: 102}
     Nodes:
     - Text: "March 20th, 1789\nEarly the next morning, Camille approaches you, occasionally
         wringing her apron with her hands. She\u2019s obviously nervous.\r\n\n\u201CMadame,
@@ -62,8 +88,9 @@ MonoBehaviour:
       OneShotSFX:
         Name: 
         Parameters: []
-    - Text: "\u201CYou\u2019re expected to attend a party tomorrow. I mean, Armand
-        replied to the invitation, but you were to be his date.\u201D"
+    - Text: "\u201CYou\u2019re expected to attend a party tomorrow, held by one Viscountess
+        Marcelle de Foix. I mean, Armand replied to the invitation, but you were to
+        be his date.\u201D"
       Background: {fileID: 21300000, guid: f0abd5a48ddfdda4db48289ab6e6f602, type: 3}
       Character1:
         AvatarID: Camille
@@ -74,7 +101,10 @@ MonoBehaviour:
         Pose: 
         Name: 
       Speaker: 2
-      Rewards: []
+      Rewards:
+      - Type: 10
+        ID: Marcelle de Foix's Exclusive Gathering
+        Value: 1
       Music:
         Name: 
         Parameters: []
@@ -294,61 +324,360 @@ MonoBehaviour:
       OneShotSFX:
         Name: 
         Parameters: []
+    - Text: '"You''re expected to attend a party tomorrow, held by one Baron Maximin
+        de Termes. I mean, Armand replied to the invitation, but you were to be his
+        date."'
+      Background: {fileID: 21300000, guid: f0abd5a48ddfdda4db48289ab6e6f602, type: 3}
+      Character1:
+        AvatarID: Camille
+        Pose: neutral
+        Name: Camille
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 2
+      Rewards:
+      - Type: 10
+        ID: Maximin de Termes' Private Salon
+        Value: 1
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: '"I''m sorry Madame, but a Viscountess... it just felt above my station,
+        so I tried not to pay attention whenever she came up." Camille replies with
+        a shrug.'
+      Background: {fileID: 21300000, guid: f0abd5a48ddfdda4db48289ab6e6f602, type: 3}
+      Character1:
+        AvatarID: Camille
+        Pose: neutral
+        Name: Camille
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 2
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: '"I hope that helps Madame."'
+      Background: {fileID: 21300000, guid: f0abd5a48ddfdda4db48289ab6e6f602, type: 3}
+      Character1:
+        AvatarID: Camille
+        Pose: neutral
+        Name: Camille
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 2
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: '"I know that she never visited the house. Monsieur Armand seemed to like
+        her, but from what I could tell she was a little... how do I put this?"'
+      Background: {fileID: 21300000, guid: f0abd5a48ddfdda4db48289ab6e6f602, type: 3}
+      Character1:
+        AvatarID: Camille
+        Pose: neutral
+        Name: Camille
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 2
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: '"Judgemental! She was a little, very judgemental. I hope that helps,
+        Madame."'
+      Background: {fileID: 21300000, guid: f0abd5a48ddfdda4db48289ab6e6f602, type: 3}
+      Character1:
+        AvatarID: Camille
+        Pose: neutral
+        Name: Camille
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 2
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: '"You''re expected to attend a party tomorrow, held by one Baron Maximin
+        de Termes. I mean, Armand replied to the invitation, but you were to be his
+        date."'
+      Background: {fileID: 21300000, guid: f0abd5a48ddfdda4db48289ab6e6f602, type: 3}
+      Character1:
+        AvatarID: Camille
+        Pose: neutral
+        Name: Camille
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 2
+      Rewards:
+      - Type: 10
+        ID: Maximin de Termes' Private Salon
+        Value: 1
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: '"I''m sorry Madame, if I had know this was going to happen, I would have
+        pried more into this Monsieur Armand''s affairs." Camille replies with a surprising
+        earnestness.'
+      Background: {fileID: 21300000, guid: f0abd5a48ddfdda4db48289ab6e6f602, type: 3}
+      Character1:
+        AvatarID: Camille
+        Pose: neutral
+        Name: Camille
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 2
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: '"All I know is that this Baron Maximin is a very outspoken political
+        type. Always going on about ''constitutions'' and ''natural law''. Monsieur
+        Armand attended a lot of his salons, but didn''t always look happy when he
+        came back from them."'
+      Background: {fileID: 21300000, guid: f0abd5a48ddfdda4db48289ab6e6f602, type: 3}
+      Character1:
+        AvatarID: Camille
+        Pose: neutral
+        Name: Camille
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 2
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: '"You''re expected to attend a party tomorrow, held by one Baron Maximin
+        de Termes. I mean, Armand replied to the invitation, but you were to be his
+        date."'
+      Background: {fileID: 21300000, guid: f0abd5a48ddfdda4db48289ab6e6f602, type: 3}
+      Character1:
+        AvatarID: Camille
+        Pose: neutral
+        Name: Camille
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 2
+      Rewards:
+      - Type: 10
+        ID: Maximin de Termes' Private Salon
+        Value: 1
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: '"You''re expected to attend a party tomorrow, held by one Baron Maximin
+        de Termes. I mean, Armand replied to the invitation, but you were to be his
+        date."'
+      Background: {fileID: 21300000, guid: f0abd5a48ddfdda4db48289ab6e6f602, type: 3}
+      Character1:
+        AvatarID: Camille
+        Pose: neutral
+        Name: Camille
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 2
+      Rewards:
+      - Type: 10
+        ID: Maximin de Termes' Private Salon
+        Value: 1
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     LinkData:
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements:
+      - Type: 13
+        ID: 
+        Value: 50
+        Operator: 0
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Splendid! A party!"'
+    - Text: '"Splendid! A party!"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Hmm... do you think Armand will actually be there?"'
+    - Text: '"Hmm... do you think Armand will actually be there?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"What? Why didn''t you tell me sooner?"'
+    - Text: '"What? Why didn''t you tell me sooner?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    Name: An Invitation for Armand
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: '"Splendid! A party!"'
+      Requirements: []
+      Rewards: []
+    - Text: '"Hmm... do you think Armand will actually be there?"'
+      Requirements: []
+      Rewards: []
+    - Text: '"What? Why didn''t you tell me sooner?"'
+      Requirements: []
+      Rewards: []
+    - Text: '"What do you know about the Viscountess de Foix?"'
+      Requirements: []
+      Rewards: []
+    - Text: '"Well, at least I have a party to go to!"'
+      Requirements: []
+      Rewards: []
+    - Text: '"Hmm... do you think Armand will actually be at this party?"'
+      Requirements: []
+      Rewards: []
+    - Text: '"Camille, why didn''t you tell me about this invitation sooner?"'
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: '"Well, at least I have a party to go to!"'
+      Requirements: []
+      Rewards: []
+    - Text: '"Hmm... do you think Armand will actually be at this party?"'
+      Requirements: []
+      Rewards: []
+    - Text: '"Camille, why didn''t you tell me about this invitation sooner?"'
+      Requirements: []
+      Rewards: []
+    - Text: '"Camille, do you know anything about this Baron Maximin?"'
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    Name: 
+    Late: 0
     _date: 564306048000000000
     Requirements: []
     OneShot: 1
-    Month: 0
-    Day: 0
-    Year: 0
+    Moment:
+      Text: 
+      Background: {fileID: 0}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
   _index: -1
-  _isNode: 1
+  _isNode: 0

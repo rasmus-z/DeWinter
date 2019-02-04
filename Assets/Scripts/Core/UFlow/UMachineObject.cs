@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 #if (UNITY_EDITOR)
 using UnityEditor;
 using UnityEditor.Callbacks;
@@ -15,26 +16,21 @@ namespace UFlow
     [Serializable]
     public class UMachineObject : ScriptableObject, IDirectedGraphObjectConfig
     {
-        public int[] Exits;
-        public Dictionary<int, int[]> Aggregates;
-        public UMachineGraph Machine;
+        public UMachineDirectedGraph Graph;
 
-        #if (UNITY_EDITOR)
+#if (UNITY_EDITOR)
 
-        [SerializeField]
+        [SerializeField, HideInInspector]
         private int _index = -1;
 
-        [SerializeField]
+        [SerializeField, HideInInspector]
         private bool _isNode;
 
         private SerializedObject _graphObject;
 
         private void OnEnable()
         {
-            hideFlags = HideFlags.DontSave;
-            if (Machine == null) Machine = new UMachineGraph();
-            if (Exits == null) Exits = new int[0];
-            if (Aggregates == null) Aggregates = new Dictionary<int, int[]>();
+            if (Graph == null) Graph = new UMachineDirectedGraph();
             _graphObject = new SerializedObject(this);
         }
 
@@ -47,23 +43,23 @@ namespace UFlow
         public SerializedObject GraphObject
         {
             get {
-                if (_graphObject == null) _graphObject = new SerializedObject(this);
+                if (_graphObject == null)
+                    _graphObject = new SerializedObject(this);
                 return _graphObject;
             }
         }
 
-        public SerializedProperty GraphProperty
-        {
-            get { return GraphObject.FindProperty("Machine");  }
-        }
+        public SerializedProperty GraphProperty => GraphObject.FindProperty("Graph");
 
         public void InitNodeData(SerializedProperty nodeData)
         {
             nodeData.FindPropertyRelative("ID").stringValue = "New State";
         }
 
-        public void InitLinkData(SerializedProperty linkData) { }
-
+        public void InitLinkData(SerializedProperty linkData)
+        {
+            linkData.FindPropertyRelative("_machine");
+        }
 
         [OnOpenAsset(1)]
         public static bool OpenMachine(int instanceID, int line)
@@ -75,16 +71,16 @@ namespace UFlow
         [MenuItem("Assets/Create/Create UFlow Machine")]
         public static void CreateIncident()
         {
-            ScriptableObjectUtil.CreateScriptableObject<UMachineObject>("New Machine");
+            ScriptableObjectUtil.CreateScriptableObject<UMachineObject>("New UFlow Machine");
         }
-#endif
         public GUIContent GetGUIContent(int nodeIndex)
         {
             GUI.color = (nodeIndex == 0 ? Color.cyan : Color.white);
             GUI.skin.button.alignment = TextAnchor.MiddleCenter;
-            string str = Machine.Nodes[nodeIndex].ID;
+            string str = Graph.Nodes[nodeIndex].ID;
             return new GUIContent(str);
         }
+#endif
     }
 
 #if (UNITY_EDITOR)

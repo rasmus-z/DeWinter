@@ -18,6 +18,7 @@ namespace Ambition
         {
             _script = GetComponent<SpotlightView>();
             AmbitionApp.Subscribe<GuestVO>(PartyMessages.GUEST_TARGETED, HandleGuest);
+            AmbitionApp.Subscribe<GuestVO>(PartyMessages.GUEST_SELECTED, HandleGuestSelected);
             StopAllCoroutines();
             StartCoroutine(FlashCR());
         }
@@ -25,6 +26,7 @@ namespace Ambition
         void OnDisable()
         {
             AmbitionApp.Unsubscribe<GuestVO>(PartyMessages.GUEST_TARGETED, HandleGuest);
+            AmbitionApp.Unsubscribe<GuestVO>(PartyMessages.GUEST_SELECTED, HandleGuestSelected);
             StopAllCoroutines();
             _script.On = false;
         }
@@ -48,6 +50,11 @@ namespace Ambition
                 }
                 yield return null;
             }
+        }
+
+        void HandleGuestSelected(GuestVO guest)
+        {
+            if (guest != null) Destroy(this);
         }
     }
 }

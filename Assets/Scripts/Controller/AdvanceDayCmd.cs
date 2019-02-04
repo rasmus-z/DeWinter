@@ -3,10 +3,6 @@ namespace Ambition
 {
     public class AdvanceDayCmd : Core.ICommand
     {
-        public void Execute()
-        {
-            CalendarModel calendar = AmbitionApp.GetModel<CalendarModel>();
-            calendar.Today = calendar.DaysFromNow(1);
-        }
+        public void Execute() => AmbitionApp.GetModel<CalendarModel>().Day++;
     }
 }

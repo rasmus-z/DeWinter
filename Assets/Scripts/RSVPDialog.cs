@@ -58,14 +58,15 @@ namespace Ambition
             ObjectiveText.text = AmbitionApp.GetString("party_objectives");
             HostText.text = AmbitionApp.GetString("rsvp");
             Seal.sprite = InvitationConfig.GetSprite("seal." + party.Faction);
-            Stamp.sprite = InvitationConfig.GetSprite(party.Faction.ToLower());
-            BodyTxt.text = party.Invitiation;
+            Stamp.sprite = InvitationConfig.GetSprite(party.Faction);
+            BodyTxt.text = party.Invitation;
         }
 
         public void RSVPAction(int decision)
         {
-            _party.RSVP = (RSVP)decision;
-            AmbitionApp.SendMessage(_party);
+            AmbitionApp.SendMessage(decision == (int)RSVP.Accepted
+                ? PartyMessages.ACCEPT_INVITATION
+                : PartyMessages.DECLINE_INVITATION, _party);
         }
     }
 }

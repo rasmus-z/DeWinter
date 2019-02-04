@@ -8,8 +8,7 @@ namespace Ambition
     {
         public void Execute(GuestVO guest)
         {
-            if (guest.IsLockedIn) return; // Don't bother if the guest is already locked in
-
+            if (guest.State == GuestState.Offended) return; //If a guest has already left, there's nothing you can do, just move on
             PartyModel partyModel = AmbitionApp.GetModel<PartyModel>();
             ConversationModel model = AmbitionApp.GetModel<ConversationModel>();
             RemarkVO remark = model.Remark;
@@ -33,23 +32,41 @@ namespace Ambition
             // Adjust guest according to configued reaction
             RemarkResult result = partyModel.RemarkResults[key];
             int opinionDelta = (int)(((float)RNG.Generate(result.OpinionMin, result.OpinionMax)) * ReparteBonus * levelBonus);
-            guest.Opinion += opinionDelta;
-            if (guest.Opinion >= 100) AmbitionApp.SendMessage(PartyMessages.GUEST_CHARMED, guest);
-            else if (guest.Opinion <= 0) AmbitionApp.SendMessage(PartyMessages.GUEST_OFFENDED, guest);
-            else switch(key)
+            if (guest.State != GuestState.Charmed) guest.Opinion += opinionDelta;
+            switch(key)
             {
                 case PartyConstants.LIKE:
-                    guest.State = GuestState.Interested;
-                    AmbitionApp.SendMessage(PartyMessages.GUEST_REACTION_POSITIVE, guest);
-                    AmbitionApp.SendMessage(PartyMessages.FREE_REMARK);
+                    if (guest.State == GuestState.Charmed) AmbitionApp.SendMessage(PartyMessages.GUEST_REACTION_ALREADYCHARMED, guest);
+                    else
+                    {
+                        if (guest.Opinion >= 100) AmbitionApp.SendMessage(PartyMessages.GUEST_CHARMED, guest);
+                        else
+                        {
+                            guest.State = GuestState.Interested;
+                            AmbitionApp.SendMessage(PartyMessages.GUEST_REACTION_POSITIVE, guest);
+                            AmbitionApp.SendMessage(PartyMessages.FREE_REMARK);
+                        }
+                    }
                     break;
                 case PartyConstants.DISLIKE:
-                    AmbitionApp.SendMessage(PartyMessages.GUEST_REACTION_NEGATIVE, guest);
-                    guest.State = GuestState.Bored;
+                    if(guest.State == GuestState.Interested) guest.State = GuestState.Bored;
+                    if (guest.Opinion <= 0) AmbitionApp.SendMessage(PartyMessages.GUEST_OFFENDED, guest);
+                    else AmbitionApp.SendMessage(PartyMessages.GUEST_REACTION_NEGATIVE, guest);
                     break;
                 default:
-                    guest.State = GuestState.Interested;
-                    AmbitionApp.SendMessage(PartyMessages.GUEST_REACTION_NEUTRAL, guest);
+                    if (guest.State == GuestState.Charmed) AmbitionApp.SendMessage(PartyMessages.GUEST_REACTION_ALREADYCHARMED, guest);
+                    else
+                    {
+                        if (guest.Opinion >= 100)
+                        {
+                            AmbitionApp.SendMessage(PartyMessages.GUEST_CHARMED, guest);
+                        }
+                        else
+                        {
+                            guest.State = GuestState.Interested;
+                            AmbitionApp.SendMessage(PartyMessages.GUEST_REACTION_NEUTRAL, guest);
+                        }
+                    }
                     break;
             }
 

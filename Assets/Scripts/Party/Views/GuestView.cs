@@ -72,6 +72,9 @@ namespace Ambition
                             case GuestState.Interested:
                                 _pose = "approval";
                                 break;
+                            case GuestState.PutOff:
+                                _pose = "putout";
+                                break;
                             default:
                                 _pose = "neutral";
                                 break;

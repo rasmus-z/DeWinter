@@ -56,8 +56,8 @@ namespace UFlow
 					state._machine = this;
 					state._node = node;
 					_states[index] = state;
-				}
-				links = _links[index];
+                }
+                links = _links[index];
 				if (links == null)
 				{
 					links = node is UStateNode<UMachine, string> ? new ULink[0] : BuildLinks(index);
@@ -110,8 +110,8 @@ namespace UFlow
 				if (_links == null) _links = new ULink[length][];
 				_queue.Enqueue(0);
 				Activate();
-			}
-			else ExitMachine();
+            }
+            else ExitMachine();
 		}
 
 		private void ExitState(int index)

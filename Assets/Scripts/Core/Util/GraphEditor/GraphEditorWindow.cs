@@ -200,20 +200,16 @@ namespace Util
                 return -1;
 
             SerializedProperty prop;
-            int index = _links.arraySize++;
+            int index = _links.arraySize;
             _links.InsertArrayElementAtIndex(index);
             prop = _links.GetArrayElementAtIndex(index);
             prop.vector2IntValue = new Vector2Int(start, end);
 
             if (_linkData != null)
             {
-                int size = _linkData.arraySize;
-                _linkData.arraySize = _links.arraySize;
-                for (int i = _linkData.arraySize-1; i >= size; i--)
-                {
-                    _linkData.InsertArrayElementAtIndex(i);
-                    _graphObject.InitLinkData(_linkData.GetArrayElementAtIndex(index));
-                }
+                _linkData.arraySize = _links.arraySize - 1;
+                _linkData.InsertArrayElementAtIndex(index);
+                _graphObject.InitLinkData(_linkData.GetArrayElementAtIndex(index));
             }
             return index;
         }
@@ -273,6 +269,7 @@ namespace Util
             if (index < 0 || graphObject == null || graphObject.GraphProperty == null) return false;
             SerializedProperty links = graphObject.GraphProperty.FindPropertyRelative("Links");
             SerializedProperty graphProperty = graphObject.GraphProperty;
+            Vector2Int ln;
             if (isNode)
             {
                 SerializedProperty nodes = graphProperty.FindPropertyRelative("Nodes");
@@ -280,7 +277,6 @@ namespace Util
                 DeleteIndex(graphProperty, "Positions", index);
                 if (!DeleteIndex(graphProperty, "Nodes", index)) return false;
 
-                Vector2Int ln;
                 for (int i = links.arraySize - 1; i >= 0; i--)
                 {
                     ln = links.GetArrayElementAtIndex(i).vector2IntValue;
@@ -302,6 +298,16 @@ namespace Util
                 DeleteIndex(graphProperty, "LinkData", index);
                 if (!DeleteIndex(graphProperty, "Links", index)) return false;
             }
+            for (index = links.arraySize-1; index >= 0; index--)
+            {
+                ln = links.GetArrayElementAtIndex(index).vector2IntValue;
+                if (ln.x == ln.y)
+                {
+                    DeleteIndex(graphProperty, "Links", index);
+                    DeleteIndex(graphProperty, "LinkData", index);
+                }
+            }
+
             graphObject.Select(-1, false);
             GraphEditorWindow window = GetWindow<GraphEditorWindow>(((ScriptableObject)graphObject).name + " | Graph Editor", false);
             window._isNode = false;
@@ -312,11 +318,11 @@ namespace Util
 
         private int CreateNewNode(Vector2 position)
         {
-            int index = _nodes.arraySize++;
-            _positions.arraySize = _nodes.arraySize;
+            int index = _nodes.arraySize;
             _nodes.InsertArrayElementAtIndex(index);
             _graphObject.InitNodeData(_nodes.GetArrayElementAtIndex(index));
 
+            _positions.InsertArrayElementAtIndex(index);
             _positions.GetArrayElementAtIndex(index).vector2Value = position;
             return index;
         }

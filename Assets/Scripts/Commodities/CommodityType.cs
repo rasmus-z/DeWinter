@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ambition
+﻿namespace Ambition
 {
 	public enum CommodityType
 	{
@@ -18,6 +16,7 @@ namespace Ambition
 
         // These are exclusively for checking Requirements/Objectives
         Date,       // Amount = ticks value of Date (Requirement Only)
-        Mark        // In party objctives, when the Mark's room is cleared (value and ID ignored)
-	}
+        Mark,       // In party objctives, when the Mark's room is cleared (value and ID ignored)
+        Chance      // Value = Chance out of 100 of success
+    }
 }

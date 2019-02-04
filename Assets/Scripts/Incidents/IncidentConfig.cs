@@ -49,6 +49,13 @@ namespace Ambition
             _serializedObject = new SerializedObject(this);
         }
 
+        private void OnValidate()
+        {
+            GraphProperty.FindPropertyRelative("_name").stringValue = name;
+            Debug.Log("Validated " + GraphProperty.FindPropertyRelative("_name").stringValue);
+            _serializedObject.ApplyModifiedProperties();
+        }
+
         public void Select(int index, bool isNode)
         {
             GraphObject.FindProperty("_index").intValue = index;
@@ -61,7 +68,6 @@ namespace Ambition
         }
 
         public void InitLinkData(SerializedProperty linkData) { }
-
 
         [OnOpenAsset(1)]
         public static bool OpenIncidentConfig(int instanceID, int line)
@@ -106,11 +112,6 @@ namespace Ambition
         private int _index = -1;
 
         private void OnEnable()
-        {
-            _index = -1;
-        }
-
-        private void OnDisable()
         {
             serializedObject.FindProperty("_index").intValue = -1;
             serializedObject.ApplyModifiedProperties();
@@ -160,9 +161,10 @@ namespace Ambition
             {
                 SerializedProperty incident = serializedObject.FindProperty("Incident");
                 SerializedProperty dateProperty = incident.FindPropertyRelative("_date");
-                bool fixedDate = GUILayout.Toggle(dateProperty.longValue >= 0, "Date");
-                if (!fixedDate) dateProperty.longValue = -1;
-                else
+                incident.FindPropertyRelative("Name").stringValue = name;
+
+                bool fixedDate = GUILayout.Toggle(dateProperty.longValue > 0, "Fixed Date");
+                if (fixedDate)
                 {
                     EditorGUILayout.BeginHorizontal();
                     DateTime date = dateProperty.longValue > 0 ? DateTime.MinValue.AddTicks(dateProperty.longValue) : DateTime.MinValue;
@@ -171,8 +173,14 @@ namespace Ambition
                     int year = Mathf.Clamp(EditorGUILayout.IntField(date.Year, GUILayout.MaxWidth(80f)), 1, 9999);
                     dateProperty.longValue = new DateTime(year, month, day).Ticks;
                     EditorGUILayout.EndHorizontal();
+                    incident.FindPropertyRelative("OneShot").boolValue = true;
                 }
-                incident.FindPropertyRelative("OneShot").boolValue = GUILayout.Toggle(incident.FindPropertyRelative("OneShot").boolValue, "One-Shot");
+                else
+                {
+                    dateProperty.longValue = -1;
+                    EditorGUILayout.PropertyField(incident.FindPropertyRelative("OneShot"), true);
+                }
+                EditorGUILayout.PropertyField(incident.FindPropertyRelative("Late"), true);
             }
             serializedObject.ApplyModifiedProperties();
         }
@@ -225,8 +233,11 @@ namespace Ambition
             if (transition != null)
             {
                 GUI.SetNextControlName(FOCUS_ID);
+                EditorGUILayout.LabelField("Leave Text and Requirements empty to make a Default Transition");
+                EditorGUILayout.LabelField("Default Transitions are only shown when no other transitions are shown");
                 SerializedProperty text = transition.FindPropertyRelative("Text");
                 text.stringValue = GUILayout.TextArea(text.stringValue);
+                EditorGUILayout.PropertyField(transition.FindPropertyRelative("Requirements"), true);
                 EditorGUILayout.PropertyField(transition.FindPropertyRelative("Rewards"), true);
             }
             return EditorGUI.EndChangeCheck();

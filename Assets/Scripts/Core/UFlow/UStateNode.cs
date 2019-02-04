@@ -3,10 +3,6 @@ using UnityEngine;
 
 namespace UFlow
 {
-    public abstract class UComponent
-    {
-
-    }
     // StateMap with instructions for initializing a simple UFlow State
     public class UStateNode
     {

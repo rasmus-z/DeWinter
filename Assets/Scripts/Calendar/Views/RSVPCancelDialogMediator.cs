@@ -35,10 +35,6 @@ namespace Ambition
 			}
 		}
 
-		public void CancelRSVP()
-		{
-            _party.RSVP = RSVP.Declined;
-			AmbitionApp.SendMessage<PartyVO>(_party);
-		}
+		public void CancelRSVP() => AmbitionApp.SendMessage(PartyMessages.DECLINE_INVITATION, _party);
 	}
 }

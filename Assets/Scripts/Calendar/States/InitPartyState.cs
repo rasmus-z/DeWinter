@@ -76,8 +76,8 @@ namespace Ambition
             //Damage the Outfit's Novelty, now that the Confidence has already been Tallied
             AmbitionApp.SendMessage(InventoryMessages.DEGRADE_OUTFIT, outfit);
 
-//         string introText = AmbitionApp.GetString("party.intro." + party.ID + ".body");
-//          if (introText != null) AmbitionApp.OpenMessageDialog("party.intro." + party.ID);
+            CalendarModel calendar = AmbitionApp.GetModel<CalendarModel>();
+            calendar.Schedule(party.IntroIncident, calendar.Today);
         }
     }
 }

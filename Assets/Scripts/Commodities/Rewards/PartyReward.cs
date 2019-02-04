@@ -14,17 +14,23 @@ namespace Ambition
                 {
                     CalendarModel calendar = AmbitionApp.GetModel<CalendarModel>();
                     PartyVO party = config.Party;
-                    AmbitionApp.Execute<InitPartyCmd, PartyVO>(party);
                     party.RSVP = (RSVP)reward.Value;
                     party.InvitationDate = calendar.Today;
+                    party.IntroIncident = config.IntroIncident?.Incident;
+                    party.ExitIncident = config.ExitIncident?.Incident;
 
-                    if (default(DateTime) == party.Date)
+                    if (default(DateTime).Equals(party.Date))
                         party.Date = calendar.Today;
 
-                    calendar.Schedule(party);
+                    AmbitionApp.Execute<InitPartyCmd, PartyVO>(party);
 
-                    if (party.RSVP == RSVP.Accepted && party.Date == calendar.Today)
-                        AmbitionApp.GetModel<PartyModel>().Party = party;
+                    if (party.RSVP == RSVP.Required && party.Date == calendar.Today)
+                    {
+                        PartyModel model = AmbitionApp.GetModel<PartyModel>();
+                        Array.ForEach(calendar.GetEvents<PartyVO>(), p => p.RSVP = RSVP.Declined);
+                        party.RSVP = RSVP.Required;
+                        model.Party = party;
+                    }
                 }
                 else
                 {

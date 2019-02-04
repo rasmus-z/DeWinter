@@ -35,6 +35,26 @@ MonoBehaviour:
     - {x: 12, y: 17}
     - {x: 17, y: 18}
     - {x: 17, y: 9}
+    Positions:
+    - {x: 0, y: -7}
+    - {x: 2, y: 94}
+    - {x: -4, y: 173}
+    - {x: -199, y: 284}
+    - {x: 145, y: 282}
+    - {x: -13, y: 466}
+    - {x: 147, y: 360}
+    - {x: -11, y: 547}
+    - {x: -14, y: 621}
+    - {x: -11, y: 697}
+    - {x: -293, y: 780}
+    - {x: -8, y: 782}
+    - {x: 292, y: 782}
+    - {x: -290, y: 853}
+    - {x: -292, y: 926}
+    - {x: 17, y: 855}
+    - {x: 20, y: 928}
+    - {x: 293, y: 851}
+    - {x: 296, y: 923}
     Nodes:
     - Text: "Before you can reply, a valet grabs you roughly by the arm and drags
         you from the study. People like your loathsome host don\u2019t need to do
@@ -52,9 +72,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: ba249014a387841349fe5ae92a816783, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: "When you finally get to the door, you feel a brutish shove, and you stumble
         out into the courtyard, barely keeping your balance in your heels. The area
         is equally crowded, with various persons entering their personal carriages.
@@ -70,9 +96,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: "The only thing left to do is go home.\r"
       Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
       Character1:
@@ -85,9 +117,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: "Choosing to take the high ground, you straighten your posture and hold
         your head high, striding towards your carriage as if it was your intention
         to leave like this all along. While you make a great effort to haughtily avoid
@@ -107,10 +145,16 @@ MonoBehaviour:
       Rewards:
       - Type: 2
         ID: 
-        Amount: 3
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+        Value: 0
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: "Boiling over with anger, you turn and rain insults upon the house. In
         fact, you consider throwing your shoe through one of their windows, before
         you remember how much you like that shoe. It\u2019s then that you notice that
@@ -126,9 +170,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: "However, when you arrive at the place where your carriage is parked,
         you quickly find out that\u2026 it isn\u2019t. \r\n\r\nIt\u2019s gone. "
       Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
@@ -142,9 +192,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: "Scanning the faces of your new audience, you see the glaring, unamused
         faces of the various party guests. You\u2019re certain that your hatred of
         Maximin and everything he stands for is going to be well known throughout
@@ -164,13 +220,19 @@ MonoBehaviour:
       Rewards:
       - Type: 7
         ID: Revolution
-        Amount: -5
+        Value: 0
       - Type: 7
         ID: Crown
-        Amount: 5
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+        Value: 0
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: "You check to make sure that you\u2019re in the right place, but to no
         avail. The carriage you hired is simply not there. \r\n\u201CHe went home!\u201D
         a passing coachman says helpfully, while adjusting the harness on a particularly
@@ -187,9 +249,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: "Before you can even respond, he gets his carriage moving, leaving you
         alone with yet another indignity. \r\n\r\nGoing back to Maximin is obviously
         unacceptable, it\u2019s too far to walk home, and most of the other guests
@@ -205,9 +273,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: "However, there appear to be three other carriages waiting to leave, each
         of them quite different. Perhaps one of them can help?\r"
       Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
@@ -221,9 +295,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: "The carriage to the left of you is of foreign design, and features a
         gilded crest as its only ornamentation. This crest is emblazoned with a motto
         in latin, and appears to belong to a priest of some description. The curtains
@@ -240,9 +320,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: "The carriage in front of you is obviously being used by a soldier of
         some sort. The driver is leaning intently towards the passenger compartment,
         waiting for orders. You recognize the insignia of the Queen\u2019s Dragoons
@@ -258,9 +344,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: "The carriage to your right is richly decorated, yet somber. Swags of
         black crepe hang from the roof of the carriage, leaving only glimmers of the
         gold underneath. The decidedly feminine bent of the decorations indicates
@@ -277,9 +369,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: "You consider the humble carriage for a moment. Is this who you\u2019d
         like to ride with?"
       Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
@@ -293,9 +391,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: '[Enter Ludovico''s Carriage]'
       Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
       Character1:
@@ -308,9 +412,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: "You consider the bold carriage for a moment, is this who you\u2019d like
         to ride with?\r"
       Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
@@ -324,9 +434,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: '[Enter Thomas-Alexandre''s Carriage]'
       Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
       Character1:
@@ -339,9 +455,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: "You consider the extravagant carriage for a moment, is this who you\u2019d
         like to ride with?"
       Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
@@ -355,9 +477,15 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     - Text: '[Enter Honorade''s Carriage]'
       Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
       Character1:
@@ -370,39 +498,574 @@ MonoBehaviour:
         Name: 
       Speaker: 0
       Rewards: []
-      Music: {fileID: 0}
-      AudioClips:
-      - {fileID: 8300000, guid: 734b8a96f1d9142eb806c099b8b07324, type: 3}
-    LinkData: []
-    Name: An Absent Carriage
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "Before you can reply, a valet grabs you roughly by the arm and drags
+        you from the study. People like your loathsome host don\u2019t need to do
+        their own dirty work, they have servants for that. It takes far longer than
+        you\u2019d like to get outside, as the entryway is crowded with guests preparing
+        to leave.\r\n \r\nYou can feel their eyes weighing heavily on you. \r"
+      Background: {fileID: 21300000, guid: 10e71d1ac02fa3c429ed7b45ef7219dd, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: event:/Ambient SFX/Amb_SmallParty_indoor
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "When you finally get to the door, you feel a brutish shove, and you stumble
+        out into the courtyard, barely keeping your balance in your heels. The area
+        is equally crowded, with various persons entering their personal carriages.
+        \r\n\r\nYou can hear somebody snicker, but you have no idea who it was.\r"
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: event:/Ambient SFX/Amb_SmallParty_outdoor
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "The only thing left to do is go home.\r"
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "Choosing to take the high ground, you straighten your posture and hold
+        your head high, striding towards your carriage as if it was your intention
+        to leave like this all along. While you make a great effort to haughtily avoid
+        eye contact with all of those watching you, you can tell that some of them
+        are quite surprised by your decorum in this dire situation.\n(You\u2019ve
+        gained 3 Reputation)\r"
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards:
+      - Type: 1
+        ID: 
+        Value: 3
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "Boiling over with anger, you turn and rain insults upon the house, upon
+        the Baron, and make some particularly stinging comments regarding legitimacy
+        of his lineage. In fact, you consider throwing your shoe through one of the
+        Baron's windows, before you remember how much you like that shoe. \n\nIt\u2019s
+        then that you notice that several of the carriages have stopped, just to watch
+        your display."
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "However, when you arrive at the place where your carriage is parked,
+        you quickly find out that\u2026 it isn\u2019t. \r\n\r\nIt\u2019s gone. "
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "Scanning the faces of your new audience, you see the glaring, unamused
+        faces of the various party guests. You\u2019re certain that your hatred of
+        Maximin and everything he stands for is going to be well known throughout
+        the city soon enough.\r\n\r\nYou grace the voyeurs with a haughty sneer before
+        leaving towards your own carriage.\n(You have lost 5 Revolution Reputation)\r\n(You
+        have gained 5 Crown Reputation)\r\n"
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards:
+      - Type: 2
+        ID: Revolution
+        Value: -5
+      - Type: 1
+        ID: Crown
+        Value: 5
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "You check to make sure that you\u2019re in the right place, but to no
+        avail. The carriage you hired is simply not there. \n\r\n\u201CHe went home!\u201D
+        a passing coachman says helpfully, while adjusting the harness on a particularly
+        grumpy horse. \u201CDoorman came out about an hour ago, and told him you wanted
+        the coach to leave without you. Seemed real important, so he went home.\u201D\r"
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "Before you can even respond, he gets his carriage moving, leaving you
+        alone with yet another indignity. \r\n\r\nGoing back to Maximin is obviously
+        unacceptable, it\u2019s too far to walk home, and most of the other guests
+        have already left. \r"
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "However, there appear to be three other carriages waiting to leave, each
+        of them quite different. Perhaps one of them can help?\r"
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "The carriage to the left of you is of foreign design, and features a
+        gilded crest as its only ornamentation. This crest is emblazoned with a motto
+        in latin, and appears to belong to a priest of some description. The curtains
+        are drawn, but someone appears to have lit a lantern inside. Judging by the
+        occupant\u2019s silhouette, it looks like he\u2019s reading."
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "The carriage in front of you is obviously being used by a soldier of
+        some sort. The driver is leaning intently towards the passenger compartment,
+        waiting for orders. You recognize the insignia of the Queen\u2019s Dragoons
+        on the side of the carriage. It feels noble and proud, but also capable."
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "The carriage to your right is richly decorated, yet somber. Swags of
+        black crepe hang from the roof of the carriage, leaving only glimmers of the
+        gold underneath. The decidedly feminine bent of the decorations indicates
+        that the occupant is a woman, but all of the black suggests that she\u2019s
+        in mourning."
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "You consider the humble carriage for a moment. Is this who you\u2019d
+        like to ride with?"
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: '[Enter Ludovico''s Carriage]'
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "You consider the bold carriage for a moment, is this who you\u2019d like
+        to ride with?\r"
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: '[Enter Thomas-Alexandre''s Carriage]'
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "You consider the extravagant carriage for a moment, is this who you\u2019d
+        like to ride with?"
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: '[Enter Honorade''s Carriage]'
+      Background: {fileID: 21300000, guid: d29d908b4617f4aebb21fdbab8688ca2, type: 3}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    LinkData:
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: '*Sigh* "This has been a night. I''ll just leave."'
+      Requirements: []
+      Rewards: []
+    - Text: '"That''s some big talk about titles, from a man who can''t even do his
+        own dirty work!"'
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: <Inspect the humble carriage to the left>
+      Requirements: []
+      Rewards: []
+    - Text: <Inspect the bold carriage in the middle>
+      Requirements: []
+      Rewards: []
+    - Text: <Inspect the extravagant carriage to the right>
+      Requirements: []
+      Rewards: []
+    - Text: '"A priest should be willing to help a poor, innocent woman like myself.
+        Let''s go."'
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards:
+      - Type: 8
+        ID: The Young Priest
+        Value: 0
+    - Text: '"Perhaps not, I''ll examine the other carriages."'
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: '"He''s a man of honor, sworn to protect France. I''m the next best thing
+        to that. Let''s go!"'
+      Requirements: []
+      Rewards:
+      - Type: 8
+        ID: The Good Soldier
+        Value: 0
+    - Text: '"Perhaps not, I''ll examine the other carriages."'
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: '"A wealthy widow, helping a lost soul in need? It works in the books.
+        Let''s go."'
+      Requirements: []
+      Rewards:
+      - Type: 8
+        ID: The Wealthy Widow
+        Value: 0
+    - Text: '"Perhaps not, I''ll examine the other carriages."'
+      Requirements: []
+      Rewards: []
+    Name: 
+    Late: 0
     _date: -1
     Requirements: []
     OneShot: 1
-    Moments: []
-    Transitions: []
-    Positions:
-    - {x: 299, y: 86}
-    - {x: 301, y: 180}
-    - {x: 295, y: 259}
-    - {x: 100, y: 370}
-    - {x: 444, y: 368}
-    - {x: 286, y: 552}
-    - {x: 446, y: 446}
-    - {x: 288, y: 633}
-    - {x: 285, y: 707}
-    - {x: 288, y: 783}
-    - {x: 6, y: 866}
-    - {x: 291, y: 868}
-    - {x: 591, y: 868}
-    - {x: 9, y: 939}
-    - {x: 7, y: 1012}
-    - {x: 316, y: 941}
-    - {x: 319, y: 1014}
-    - {x: 592, y: 937}
-    - {x: 595, y: 1009}
-    Month: 0
-    Day: 0
-    Year: 0
+    Moment:
+      Text: 
+      Background: {fileID: 0}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
   _index: -1
   _isNode: 0
-  

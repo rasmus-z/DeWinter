@@ -50,7 +50,7 @@ namespace Ambition
             List<ICalendarEvent>[] days = _calendar.Timeline.Where(p => p.Key >= _calendar.Today).Select(p => p.Value).ToArray();
             parties = days.Aggregate(new List<PartyVO>(), (items, list) => { items.AddRange(list.OfType<PartyVO>()); return items; });
 
-            types[1] = parties.Where(p => p.RSVP == RSVP.Accepted).ToList();
+            types[1] = parties.Where(p => p.RSVP == RSVP.Accepted || p.RSVP == RSVP.Required).ToList();
             types[2] = parties.Where(p => p.RSVP == RSVP.Declined).ToList();
             types[3] = parties.Where(p => p.RSVP == RSVP.New).ToList();
 

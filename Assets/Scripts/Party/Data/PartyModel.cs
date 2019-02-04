@@ -6,40 +6,34 @@ using Util;
 
 namespace Ambition
 {
-	public class PartyModel : DocumentModel
-	{
-		public PartyModel(): base("PartyData") {}
+    public class PartyModel : DocumentModel
+    {
+        public PartyModel() : base("PartyData") { }
 
-		private PartyVO _party;
-		public PartyVO Party
-		{
-			get { return _party; }
-			set {
-                CalendarModel calendar = AmbitionApp.GetModel<CalendarModel>();
-                _party = value;
-                if (_party != null)
-                {
-                    _party.RSVP = RSVP.Accepted;
-                    if (default(DateTime).Equals(_party.InvitationDate))
-                        _party.InvitationDate = calendar.Today;
-                    calendar.Schedule(_party, calendar.Today);
-                }
-            }
-		}
+        public PartyVO Party;
 
-		[JsonProperty("free_remark_counter")]
+        [JsonProperty("charmed_remark_bonus")]
+        public int CharmedRemarkBonus;
+
+        [JsonProperty("free_remark_counter")]
 		public int FreeRemarkCounter;
 
         [JsonProperty("boredom_penalty")]
         public int BoredomPenalty;
 
+        [JsonProperty("boredom_remark_penalty")]
+        public int BoredomRemarkPenalty;
+
+        [JsonProperty("offended_remark_penalty")]
+        public int OffendedRemarkPenalty;
+
         public int Turns
         {
-            get { return _party != null ? _party.Turns : 0; }
+            get { return Party != null ? Party.Turns : 0; }
             set {
-                if (_party != null)
+                if (Party != null)
                 {
-                    _party.Turns = value;
+                    Party.Turns = value;
                     AmbitionApp.SendMessage(PartyMessages.TURNS_LEFT, Turns - Turn);
                 }
             }
@@ -47,6 +41,7 @@ namespace Ambition
 
         public int TurnsLeft
         {
+            set { Turns = Turn + value; }
             get { return Turns - Turn; }
         }
 
@@ -96,7 +91,7 @@ namespace Ambition
 				GuestActionFactory factory = new GuestActionFactory();
 				foreach(GuestActionVO action in value)
 					factory.Actions[action.Type] = action;
-				AmbitionApp.RegisterFactory<string, GuestActionVO>(factory);
+				AmbitionApp.RegisterFactory(factory);
 			}
 		}
 

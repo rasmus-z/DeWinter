@@ -9,7 +9,7 @@ namespace Ambition
         {
             CalendarModel calendar = AmbitionApp.GetModel<CalendarModel>();
             ParisModel paris = AmbitionApp.GetModel<ParisModel>();
-            calendar.Incident = paris.Location.IntroIncidentConfig.Incident;
+            calendar.Schedule(paris.Location.IntroIncidentConfig.Incident, calendar.Today);
         }
     }
 }

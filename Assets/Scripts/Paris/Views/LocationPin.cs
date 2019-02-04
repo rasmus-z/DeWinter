@@ -17,7 +17,7 @@ namespace Ambition
         public Sprite LocationModalSprite;
         public GameObject Label;
         public Text LabelText;
-        public CommodityVO[] Requirements;
+        public RequirementVO[] Requirements;
 
         private string _name;
 

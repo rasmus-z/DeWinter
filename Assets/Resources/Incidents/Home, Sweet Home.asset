@@ -23,7 +23,6 @@ MonoBehaviour:
     - {x: 7, y: 8}
     - {x: 7, y: 9}
     - {x: 9, y: 10}
-    - {x: 10, y: 11}
     - {x: 10, y: 12}
     - {x: 8, y: 11}
     - {x: 8, y: 12}
@@ -32,6 +31,13 @@ MonoBehaviour:
     - {x: 14, y: 15}
     - {x: 12, y: 16}
     - {x: 16, y: 17}
+    - {x: 17, y: 14}
+    - {x: 10, y: 18}
+    - {x: 17, y: 14}
+    - {x: 17, y: 14}
+    - {x: 18, y: 19}
+    - {x: 17, y: 14}
+    - {x: 19, y: 13}
     - {x: 17, y: 14}
     Positions:
     - {x: 0, y: 0}
@@ -42,16 +48,18 @@ MonoBehaviour:
     - {x: -8, y: 418}
     - {x: -1, y: 491}
     - {x: -5, y: 564}
-    - {x: -190, y: 646}
-    - {x: 240, y: 641}
-    - {x: 236, y: 743}
-    - {x: -190, y: 821}
-    - {x: 242, y: 828}
-    - {x: -191, y: 903}
-    - {x: -188, y: 983}
-    - {x: -187, y: 1060}
-    - {x: 241, y: 905}
-    - {x: 246, y: 975}
+    - {x: -190, y: 645}
+    - {x: 210, y: 638}
+    - {x: 236, y: 744}
+    - {x: -188, y: 760}
+    - {x: 238, y: 828}
+    - {x: -184, y: 903}
+    - {x: -203, y: 981}
+    - {x: -206, y: 1061}
+    - {x: 256, y: 904}
+    - {x: 265, y: 982}
+    - {x: 28, y: 827}
+    - {x: 42, y: 914}
     Nodes:
     - Text: "After waiting around for a few hours, you leave the Orphan\u2019s Feast,
         dragging your small mountain of luggage behind you. After all, the coach was
@@ -417,7 +425,10 @@ MonoBehaviour:
         Pose: 
         Name: 
       Speaker: 0
-      Rewards: []
+      Rewards:
+      - Type: 7
+        ID: LEAVE_PARTY
+        Value: 0
       Music:
         Name: 
         Parameters: []
@@ -473,94 +484,242 @@ MonoBehaviour:
       OneShotSFX:
         Name: 
         Parameters: []
+    - Text: '"I''m sure he''s fine Madame," Camille replies with a tone of voice that
+        doesn''t fill you with confidence. "I''m sorry to tell you this, but I haven''t
+        seen Monsieur Armand in days. I was hoping he was with you."'
+      Background: {fileID: 0}
+      Character1:
+        AvatarID: Camille
+        Pose: sad
+        Name: Camille
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 2
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: Glancing around, Camille seems to notice your mountain of luggage for
+        the first time. "<i>Mon dieu Madame!</i> Did you carry this all yourself?
+        You must be exhausted!"
+      Background: {fileID: 0}
+      Character1:
+        AvatarID: Camille
+        Pose: neutral
+        Name: Camille
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 2
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
+    - Text: "She\u2019s not wrong. You\u2019re not certain how you\u2019re still upright
+        and awake right now. \r\n\u201CI\u2019ve already made up your bed Madame,
+        please go inside and let me take care of this.\u201D Camille insists.\r"
+      Background: {fileID: 0}
+      Character1:
+        AvatarID: Camille
+        Pose: neutral
+        Name: Camille
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 2
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
     LinkData:
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"<i>Merci</i> Camille, please take me to Armand."'
+    - Text: '"<i>Merci</i> Camille, please take me to Armand."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Is this where he lives? Oh God, the rats in there ate him, didn''t they?"'
+    - Text: '"Is this where he lives? Oh God, the rats in there ate him, didn''t they?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Uh... thank you Camille. Do you think Armand''s alright?"'
+    - Text: '"Uh... thank you Camille. Do you think Armand''s alright?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Fine. When I''m done, Armand is simply going to wish the rats had eaten
+    - Text: '"Fine. When I''m done, Armand is simply going to wish the rats had eaten
         him."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Do you think he''s alright?"'
+    - Text: '"Do you think he''s alright?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"He has a lot of explaining to do."'
+    - Text: '"He has a lot of explaining to do."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    Name: Home, Sweet Home
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: '"<i>Merci</i> Camille, please take me to Armand."'
+      Requirements: []
+      Rewards: []
+    - Text: '"Is this where he lives? Oh God, the rats in there ate him, didn''t they?"'
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: '"Fine. When I''m done, Armand is simply going to wish the rats had eaten
+        him."'
+      Requirements: []
+      Rewards: []
+    - Text: '"Do you think he''s alright?"'
+      Requirements: []
+      Rewards: []
+    - Text: '"He has a lot of explaining to do."'
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: '"Uh... thank you Camille. Do you think Armand''s alright?"'
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    - Text: 
+      Requirements: []
+      Rewards: []
+    Name: 
+    Late: 0
     _date: -1
     Requirements: []
     OneShot: 1
-    Month: 0
-    Day: 0
-    Year: 0
+    Moment:
+      Text: 
+      Background: {fileID: 0}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
   _index: -1
   _isNode: 1

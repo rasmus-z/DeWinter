@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UFlow;
 
 namespace Ambition
@@ -7,34 +8,36 @@ namespace Ambition
 	{
 		public override void Initialize()
 		{
-			AmbitionApp.Subscribe<int>(IncidentMessages.INCIDENT_OPTION, HandleOption);
+            AmbitionApp.Subscribe<TransitionVO>(IncidentMessages.INCIDENT_OPTION, HandleOption);
 		}
 
-        private void HandleOption(int option)
+        private void HandleOption(TransitionVO option)
         {
             CalendarModel model = AmbitionApp.GetModel<CalendarModel>();
-            IncidentVO incident = model.Incident;
+            IncidentVO incident = model.GetEvents<IncidentVO>().FirstOrDefault();
             if (incident != null)
             {
-                MomentVO moment = model.Moment;
-                MomentVO[] neighbors = incident.GetNeighbors(moment);
-                if (option < neighbors.Length)
+                MomentVO moment = incident.Moment;
+                MomentVO[] neighbors = moment != null ? incident.GetNeighbors(moment) : new MomentVO[0];
+                int index = option != null ? Array.IndexOf(incident.GetLinkData(moment), option) : -1;
+                if (index >= 0 && index < neighbors.Length)
                 {
-                    TransitionVO[] transitions = model.Incident.GetLinkData(moment);
-
-                    if (option < transitions.Length) // This should be a tautology, but whatever
-                        Array.ForEach(transitions[option].Rewards, AmbitionApp.SendMessage);
-
-                    model.Moment = neighbors[option];
+                    Array.ForEach(option.Rewards, AmbitionApp.SendMessage);
+                    MomentVO target = incident.Moment = neighbors[index];
+                    AmbitionApp.SendMessage(target);
                 }
-                else model.Moment = null;
+                else
+                {
+                    incident.Moment = null;
+                    AmbitionApp.SendMessage<MomentVO>(null);
+                }
             }
             Activate();
         }
 		
 		public override void Dispose ()
 		{
-			AmbitionApp.Unsubscribe<int>(IncidentMessages.INCIDENT_OPTION, HandleOption);
+            AmbitionApp.Unsubscribe<TransitionVO>(IncidentMessages.INCIDENT_OPTION, HandleOption);
 		}
 	}
 }

@@ -38,7 +38,7 @@ namespace Ambition
         private void SetIncidentTitle()
         {
             CalendarModel model = AmbitionApp.GetModel<CalendarModel>();
-            titleText.text = model.Incident.Name;
+            titleText.text = model.GetEvents<IncidentVO>().FirstOrDefault().ID;
         }
 
         /*

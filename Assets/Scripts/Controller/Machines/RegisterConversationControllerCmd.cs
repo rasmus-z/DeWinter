@@ -16,7 +16,7 @@ namespace Ambition
             AmbitionApp.RegisterState<SendMessageState, string>("ConversationController", "FillRemarks", PartyMessages.FILL_REMARKS);
 
             AmbitionApp.RegisterLink<AmbitionDelegateLink, string>("ConversationController", "InitConversation", "WaitforFade", GameMessages.FADE_OUT_COMPLETE);
-            AmbitionApp.RegisterLink<CheckIncidentLink>("ConversationController", "WaitforFade", "Incident");
+            AmbitionApp.RegisterLink<DelegateLink, Func<bool>>("ConversationController", "WaitforFade", "Incident", IncidentDelegates.CheckIncidents);
             AmbitionApp.RegisterLink("ConversationController", "WaitforFade", "ReadyGo");
             AmbitionApp.RegisterLink<WaitForCloseDialogLink, string>("ConversationController", "ReadyGo", "StartConversation", ReadyGoDialogMediator.DIALOG_ID);
             AmbitionApp.RegisterLink("ConversationController", "StartConversation", "FillRemarks");
@@ -55,7 +55,7 @@ namespace Ambition
             
             AmbitionApp.RegisterLink("ConversationController", "EndConversation", "EndConversationDialogOpen");
             AmbitionApp.RegisterLink<WaitForCloseDialogLink, string>("ConversationController", "EndConversationDialogOpen", "WaitForEndConversationDialogClose", EndConversationDialogMediator.DIALOG_ID);
-            AmbitionApp.RegisterLink<CheckIncidentLink>("ConversationController", "WaitForEndConversationDialogClose", "Incident");
+            AmbitionApp.RegisterLink<DelegateLink, Func<bool>>("ConversationController", "WaitForEndConversationDialogClose", "Incident", IncidentDelegates.CheckIncidents);
         }
     }
 }

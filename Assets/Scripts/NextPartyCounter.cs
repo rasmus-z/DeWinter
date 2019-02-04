@@ -63,7 +63,7 @@ public class NextPartyCounter : MonoBehaviour {
     public void DisplayTooltip()
     {
         Tooltip.SetActive(true);
-        TooltipText.Phrase = "party_" + _partyFaction + "_likes_and_dislikes"; //This is to reference a string in Default.json
+        TooltipText.Phrase = "party_" + _partyFaction.ToLower() + "_likes_and_dislikes"; //This is to reference a string in Default.json
     }
 
     public void HideTooltip()

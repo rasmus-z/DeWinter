@@ -24,16 +24,16 @@ namespace Ambition
         {
             //App.Service<AssetBundleSvc>().Load(PLAYER_BUNDLE);
             _characters = Resources.LoadAll<PlayerConfig>(PLAYER_BUNDLE);
-            if (_characters.Length > 1) 
-            {
-                gameObject.SetActive(true);
-                _btnHeight = ButtonPrefab.GetComponent<RectTransform>().rect.height;
-                Array.ForEach(_characters, GenerateButton);
-            }
-            else {
-                _selected = _characters[0];
-                PickCharacter();
-            }
+            //if (_characters.Length > 1) 
+            //{
+            //    gameObject.SetActive(true);
+            //    _btnHeight = ButtonPrefab.GetComponent<RectTransform>().rect.height;
+            //    Array.ForEach(_characters, GenerateButton);
+            //}
+            //else {
+            //    _selected = _characters[0];
+            //    PickCharacter();
+            //}
         }
 
         private void OnDestroy()

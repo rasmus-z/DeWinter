@@ -32,6 +32,22 @@ MonoBehaviour:
     - {x: 8, y: 14}
     - {x: 14, y: 13}
     - {x: 9, y: 14}
+    Positions:
+    - {x: 374, y: 100}
+    - {x: 377, y: 178}
+    - {x: 381, y: 251}
+    - {x: 194, y: 360}
+    - {x: 515, y: 369}
+    - {x: 193, y: 446}
+    - {x: 515, y: 443}
+    - {x: 143, y: 563}
+    - {x: 381, y: 563}
+    - {x: 601, y: 561}
+    - {x: 142, y: 645}
+    - {x: 143, y: 725}
+    - {x: 143, y: 801}
+    - {x: 142, y: 888}
+    - {x: 379, y: 885}
     Nodes:
     - Text: The conversation finishes as all the others had, with the various guests
         walking away from you, charmed and satisfied. A few days spent cooped up in
@@ -372,104 +388,89 @@ MonoBehaviour:
         Name: 
         Parameters: []
     LinkData:
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"I''m Yvette Decaux."'
+    - Text: '"I''m Yvette Decaux."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"<i>Pardon moi</i>, I''m not sure I understand the question."'
+    - Text: '"<i>Pardon moi</i>, I''m not sure I understand the question."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"I''m trying to find my fiance, Baron Armand de Marbo."'
+    - Text: '"I''m trying to find my fiance, Baron Armand de Marbo."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"I''m trying to find my fiance, Baron Armand de Marbo."'
+    - Text: '"I''m trying to find my fiance, Baron Armand de Marbo."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"I just moved here, so I''m trying to get a feel for Paris."'
+    - Text: '"I just moved here, so I''m trying to get a feel for Paris."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"I just moved here, so I''m trying to get a feel for Paris."'
+    - Text: '"I just moved here, so I''m trying to get a feel for Paris."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Me? I''m just having fun."'
+    - Text: '"Me? I''m just having fun."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Me? I''m just having fun."'
+    - Text: '"Me? I''m just having fun."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    Name: A Suprising Woman
+    Name: 
+    Late: 0
     _date: -1
     Requirements: []
     OneShot: 1
-    Positions:
-    - {x: 374, y: 100}
-    - {x: 377, y: 178}
-    - {x: 381, y: 251}
-    - {x: 194, y: 360}
-    - {x: 515, y: 369}
-    - {x: 193, y: 446}
-    - {x: 515, y: 443}
-    - {x: 143, y: 563}
-    - {x: 381, y: 563}
-    - {x: 601, y: 561}
-    - {x: 142, y: 645}
-    - {x: 143, y: 725}
-    - {x: 143, y: 801}
-    - {x: 142, y: 888}
-    - {x: 379, y: 885}
-    Month: 0
-    Day: 0
-    Year: 0
+    Moment:
+      Text: 
+      Background: {fileID: 0}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
   _index: -1
   _isNode: 0

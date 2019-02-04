@@ -28,18 +28,11 @@ namespace Ambition
 
 	    public void CreateCancellationModal()
 	    {
-            List<ICalendarEvent> events;
 	    	CalendarModel calendar = AmbitionApp.GetModel<CalendarModel>();
-            if (calendar.Timeline.TryGetValue(calendar.Today, out events))
-            {
-                PartyVO party = events.Find(e => e is PartyVO && ((PartyVO)e).RSVP == RSVP.Accepted) as PartyVO;
-                if (party != null) AmbitionApp.OpenDialog(DialogConsts.CANCEL, party);
-            }
+            PartyVO party = Array.Find(calendar.GetEvents<PartyVO>(), p => p.RSVP == RSVP.Accepted);
+            if (party != null) AmbitionApp.OpenDialog(DialogConsts.CANCEL, party);
 	    }
 
-        public void GoToTheMerchant()
-	    {
-	        tabsController.WardrobeSelected();
-	    }
+        public void GoToTheMerchant() => tabsController.WardrobeSelected();
 	}
 }

@@ -24,49 +24,47 @@ MonoBehaviour:
     - {x: 7, y: 10}
     - {x: 5, y: 8}
     - {x: 6, y: 7}
-    - {x: 10, y: 12}
+    - {x: 10, y: 11}
+    - {x: 6, y: 7}
+    - {x: 11, y: 12}
     - {x: 6, y: 7}
     - {x: 12, y: 13}
     - {x: 6, y: 7}
     - {x: 13, y: 14}
     - {x: 6, y: 7}
-    - {x: 14, y: 15}
+    - {x: 13, y: 15}
+    - {x: 6, y: 7}
+    - {x: 15, y: 16}
     - {x: 6, y: 7}
     - {x: 14, y: 16}
     - {x: 6, y: 7}
     - {x: 16, y: 17}
     - {x: 6, y: 7}
-    - {x: 15, y: 17}
+    - {x: 17, y: 18}
     - {x: 6, y: 7}
     - {x: 17, y: 19}
     - {x: 6, y: 7}
-    - {x: 19, y: 20}
-    - {x: 6, y: 7}
-    - {x: 19, y: 21}
-    - {x: 6, y: 7}
     Positions:
     - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
-    - {x: 0, y: 0}
+    - {x: 6, y: 64}
+    - {x: 365, y: -4}
+    - {x: 366, y: 107}
+    - {x: 6, y: 125}
+    - {x: 131, y: 199}
+    - {x: -78, y: 200}
+    - {x: 127, y: 284}
+    - {x: -136, y: 327}
+    - {x: -141, y: 414}
+    - {x: 129, y: 368}
+    - {x: 129, y: 454}
+    - {x: 128, y: 527}
+    - {x: 126, y: 596}
+    - {x: 71, y: 679}
+    - {x: 305, y: 683}
+    - {x: 157, y: 754}
+    - {x: 161, y: 828}
+    - {x: 15, y: 886}
+    - {x: 270, y: 886}
     Nodes:
     - Text: "You wake up the next morning to a polite knock on your bedroom\u2019s
         door frame."
@@ -317,27 +315,6 @@ MonoBehaviour:
       OneShotSFX:
         Name: 
         Parameters: []
-    - Text: New Moment
-      Background: {fileID: 21300000, guid: f0abd5a48ddfdda4db48289ab6e6f602, type: 3}
-      Character1:
-        AvatarID: Camille
-        Pose: neutral
-        Name: Camille
-      Character2:
-        AvatarID: 
-        Pose: 
-        Name: 
-      Speaker: 0
-      Rewards: []
-      Music:
-        Name: 
-        Parameters: []
-      AmbientSFX:
-        Name: 
-        Parameters: []
-      OneShotSFX:
-        Name: 
-        Parameters: []
     - Text: "Camille starts to talk faster and faster. \u201CThen, when all was lost,
         you were saved by a beautiful stranger who escorted you home in the moonlit
         night! It\u2019s so romantic, <i>non</i>?\u201D"
@@ -470,27 +447,6 @@ MonoBehaviour:
       OneShotSFX:
         Name: 
         Parameters: []
-    - Text: New Moment
-      Background: {fileID: 21300000, guid: f0abd5a48ddfdda4db48289ab6e6f602, type: 3}
-      Character1:
-        AvatarID: Camille
-        Pose: neutral
-        Name: Camille
-      Character2:
-        AvatarID: 
-        Pose: 
-        Name: 
-      Speaker: 2
-      Rewards: []
-      Music:
-        Name: 
-        Parameters: []
-      AmbientSFX:
-        Name: 
-        Parameters: []
-      OneShotSFX:
-        Name: 
-        Parameters: []
     - Text: "\u201CIn fact, I\u2019m sure that anyone who really judges you fairly
         is going to love you.\u201D"
       Background: {fileID: 21300000, guid: f0abd5a48ddfdda4db48289ab6e6f602, type: 3}
@@ -556,136 +512,125 @@ MonoBehaviour:
         Name: 
         Parameters: []
     LinkData:
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: <Take a Letter>
+    - Text: <Take a Letter>
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Are they for me, or are they for Armand?"'
+    - Text: '"Are they for me, or are they for Armand?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Why would anyone invite me to a party?"'
+    - Text: '"Why would anyone invite me to a party?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Oh great, more chances to be humiliated by someone I don''t even know."'
+    - Text: '"Oh great, more chances to be humiliated by someone I don''t even know."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Oh great, more chances to be humiliated by someone I don''t even know."'
+    - Text: '"Oh great, more chances to be humiliated by someone I don''t even know."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Why would anyone invite me to a party?"'
+    - Text: '"Why would anyone invite me to a party?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Why would anyone invite me to a party?"'
+    - Text: '"Why would anyone invite me to a party?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Why would anyone invite me to a party?"'
+    - Text: '"Why would anyone invite me to a party?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Why would anyone invite me to a party?"'
+    - Text: '"Why would anyone invite me to a party?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Never mind what?"'
+    - Text: '"Never mind what?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Why would anyone invite me to a party?"'
+    - Text: '"Why would anyone invite me to a party?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Yes, let us never mind that. Never mind it again."'
+    - Text: '"Yes, let us never mind that. Never mind it again."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Why would anyone invite me to a party?"'
+    - Text: '"Why would anyone invite me to a party?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Why would anyone invite me to a party?"'
+    - Text: '"Why would anyone invite me to a party?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Why would anyone invite me to a party?"'
+    - Text: '"Why would anyone invite me to a party?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Why would anyone invite me to a party?"'
+    - Text: '"Why would anyone invite me to a party?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Why would anyone invite me to a party?"'
+    - Text: '"Why would anyone invite me to a party?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"<i>Merci</i> Camille. I really hope that''s true."'
+    - Text: '"<i>Merci</i> Camille. I really hope that''s true."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Why would anyone invite me to a party?"'
+    - Text: '"Why would anyone invite me to a party?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"That''s all well and good, but how does any of this work?" <Tutorial>'
+    - Text: '"That''s all well and good, but how does any of this work?" <Tutorial>'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Why would anyone invite me to a party?"'
+    - Text: '"Why would anyone invite me to a party?"'
+      Requirements: []
       Rewards: []
-    Name: The Morning, After Disaster
-    _date: 564309504000000000
+    Name: 
+    Late: 0
+    _date: -1
     Requirements: []
     OneShot: 1
-    Month: 0
-    Day: 0
-    Year: 0
+    Moment:
+      Text: 
+      Background: {fileID: 0}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
   _index: -1
   _isNode: 1

@@ -314,66 +314,73 @@ MonoBehaviour:
         Name: 
         Parameters: []
     LinkData:
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"I have an important party soon, and I need to look amazing." <No Tutorial>'
+    - Text: '"I have an important party soon, and I need to look amazing." <No Tutorial>'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"All of this is so new... what can you tell me about outfits and fashion?"
+    - Text: '"All of this is so new... what can you tell me about outfits and fashion?"
         <Tutorial>'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"What is that smell?"'
+    - Text: '"What is that smell?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"I have an important party soon, and I need to look amazing." <No Tutorial>'
+    - Text: '"I have an important party soon, and I need to look amazing." <No Tutorial>'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"All of this is so new... what can you tell me about outfits and fashion?"
+    - Text: '"All of this is so new... what can you tell me about outfits and fashion?"
         <Tutorial>'
+      Requirements: []
       Rewards: []
-    Name: La Petit Mogul
+    Name: 
+    Late: 0
     _date: -1
     Requirements: []
     OneShot: 1
-    Month: 0
-    Day: 0
-    Year: 0
+    Moment:
+      Text: 
+      Background: {fileID: 0}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
   _index: -1
   _isNode: 0

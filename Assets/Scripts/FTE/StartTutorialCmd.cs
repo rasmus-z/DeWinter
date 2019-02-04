@@ -8,8 +8,7 @@ namespace Ambition
         {
             AmbitionApp.UnregisterCommand<StartTutorialCmd>(GameMessages.START_TUTORIAL);
             AmbitionApp.UnregisterCommand<SkipTutorialCmd>(GameMessages.SKIP_TUTORIAL);
-            PartyModel model = AmbitionApp.GetModel<PartyModel>();
-            model.DeckSize = 20;
+            AmbitionApp.GetModel<PartyModel>().DeckSize = 20;
 
             AmbitionApp.RegisterCommand<TutorialFleeConversationCmd>(PartyMessages.FLEE_CONVERSATION);
 
@@ -28,7 +27,6 @@ namespace Ambition
             AmbitionApp.RegisterLink<CheckEndTutorialLink>(TutorialConsts.TUTORIAL_MACHINE, "EndConversationTutorial", "EndTutorialParty");
 
             AmbitionApp.InvokeMachine(TutorialConsts.TUTORIAL_MACHINE);
-            //AmbitionApp.InvokeMachine("TutorialConversationController");
         }
     }
 }

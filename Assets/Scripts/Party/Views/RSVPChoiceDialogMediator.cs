@@ -1,7 +1,4 @@
-﻿using System;
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine.UI;
 using Dialog;
 using Core;
@@ -39,17 +36,17 @@ namespace Ambition
 	    			{
                         if (_parties[i].RSVP == RSVP.Accepted)
 	    				{
-							AmbitionApp.OpenDialog<PartyVO>(DialogConsts.RSVP_CHOICE, _parties[i]);
+							AmbitionApp.OpenDialog(DialogConsts.RSVP_CHOICE, _parties[i]);
 		    			}
 		    			else
 		    			{
                             _parties[i].RSVP = RSVP.Declined;
-							AmbitionApp.SendMessage<PartyVO>(_parties[i]);
+							AmbitionApp.SendMessage(_parties[i]);
 		    			}
 		    		}
 	    			else
 	    			{
-						AmbitionApp.SendMessage<PartyVO>(DialogConsts.RSVP, _parties[i]);
+						AmbitionApp.SendMessage(DialogConsts.RSVP, _parties[i]);
 	    			}
 	    		}
 	    	}

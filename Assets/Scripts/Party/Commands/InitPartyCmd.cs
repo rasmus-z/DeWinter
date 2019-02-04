@@ -31,15 +31,17 @@ namespace Ambition
                 {"$ADJECTIVE",GetRandomText("party_fluff_adjective")},
                 {"$NOUN",GetRandomText("party_fluff_noun")}});
 
-            party.Invitiation = AmbitionApp.GetString("party.invitation." + party.ID, new Dictionary<string, string>(){
-                {"$PLAYER", AmbitionApp.GetModel<GameModel>().PlayerName},
-                //{"$PRONOUN", AmbitionApp.GetString(party.Host.Gender == Gender.Female ? "her" : "his")},
-                {"$PRONOUN", AmbitionApp.GetString("their")}, // TODO
-                {"$PARTY",party.Description},
-                {"$DATE", AmbitionApp.GetModel<CalendarModel>().GetDateString(party.Date)},
-                {"$SIZE", AmbitionApp.GetString("party_importance." + ((int)party.Importance).ToString())},
-                {"$FLUFF", str}});
-
+            if (string.IsNullOrWhiteSpace(party.Invitation))
+            {
+                party.Invitation = AmbitionApp.GetString("party.invitation." + party.ID, new Dictionary<string, string>(){
+                    {"$PLAYER", AmbitionApp.GetModel<GameModel>().PlayerName},
+                    //{"$PRONOUN", AmbitionApp.GetString(party.Host.Gender == Gender.Female ? "her" : "his")},
+                    {"$PRONOUN", AmbitionApp.GetString("their")}, // TODO
+                    {"$PARTY",party.Description},
+                    {"$DATE", AmbitionApp.GetModel<CalendarModel>().GetDateString(party.Date)},
+                    {"$SIZE", AmbitionApp.GetString("party_importance." + ((int)party.Importance).ToString())},
+                    {"$FLUFF", str}});
+            }
 
             // Random Faction
             if (party.Faction == null)
@@ -49,6 +51,7 @@ namespace Ambition
             if (party.Turns == 0) party.Turns = ((int)party.Importance * 5) + 1;
 
             AmbitionApp.GetModel<CalendarModel>().Schedule(party);
+            AmbitionApp.SendMessage(party);
         }
 
         private string GetRandomText(string phrase)

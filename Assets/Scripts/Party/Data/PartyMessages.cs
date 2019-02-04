@@ -7,6 +7,8 @@ namespace Ambition
 		public const string SHOW_MAP = "SHOW_MAP";
 		public const string SHOW_ROOM = "SHOW_ROOM";
 
+        public const string ACCEPT_INVITATION = "ACCEPT_INVITATION";
+        public const string DECLINE_INVITATION = "DECLINE_INVITATION";
         public const string GO_TO_PARTY = "GO_TO_PARTY";
         public const string START_PARTY = "START_PARTY";
         public const string PARTY_STARTED = "PARTY_STARTED";
@@ -33,8 +35,10 @@ namespace Ambition
         public const string GUEST_REACTION_POSITIVE = "GUEST_REACTION_POSITIVE";
         public const string GUEST_REACTION_NEUTRAL = "GUEST_REACTION_NEUTRAL";
         public const string GUEST_REACTION_NEGATIVE = "GUEST_REACTION_NEGATIVE";
+        public const string GUEST_REACTION_ALREADYCHARMED = "GUEST_REACTION_ALREADYCHARMED";
         public const string GUEST_CHARMED = "GUEST_CHARMED";
-        public const string GUEST_OFFENDED = "GUEST_OFFENDED";
+        public const string GUEST_OFFENDED = "GUEST_OFFENDED"; //Used when a guest is put off
+        public const string GUEST_LEFT = "GUEST_LEFT"; //Used when a guest actually leaves the conversation
         public const string GUEST_REACTION_BORED = "GUEST_REACTION_BORED";
         public const string ENEMY_RESET = "ENEMY_RESET";
 		public const string REPARTEE_BONUS = "REPARTEE_BONUS";
@@ -54,5 +58,6 @@ namespace Ambition
         public const string OBJECTIVES_COMPLETE = "OBJECTIVES_COMPLETE";
         public const string START_TUTORIAL_PARTY = "START_TUTORIAL_PARTY";
         public const string END_TUTORIAL_PARTY = "END_TUTORIAL_PARTY";
+        public const string UPDATE_PARTIES = "UPDATE_PARTIES";
     }
 }

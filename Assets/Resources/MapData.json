@@ -82,11 +82,11 @@
 					],
 					rewards:[
 						{type:"Reputation", id:"null", value:2},
-            {
-              "type": "Incident",
-              "id": "An Honest Inquiry",
-              "value": 1
-            }
+			            {
+						  "type": "Incident",
+						  "id": "An Honest Inquiry",
+						  "value": 1
+						}
 					],
 					features:["Punchbowl"],
 					difficulty:2,

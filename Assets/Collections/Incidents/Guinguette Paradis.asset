@@ -39,12 +39,32 @@ MonoBehaviour:
         Name: 
         Parameters: []
     LinkData: []
-    Name: An Invitation for Armand
+    Name: 
+    Late: 0
     _date: -1
     Requirements: []
     OneShot: 1
-    Month: 0
-    Day: 0
-    Year: 0
+    Moment:
+      Text: 
+      Background: {fileID: 0}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
   _index: -1
   _isNode: 0

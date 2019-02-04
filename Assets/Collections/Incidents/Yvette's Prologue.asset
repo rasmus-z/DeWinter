@@ -72,6 +72,7 @@ MonoBehaviour:
     - {x: 520, y: 608}
     - {x: 11, y: 437}
     - {x: 404, y: 18}
+    - {x: 404, y: 18}
     Nodes:
     - Text: "March 19th, 1789\r\nThe carriage rumbles and bounces along the cobbles
         as you approach Paris. It\u2019s taken over a week to get here, even carrying
@@ -89,7 +90,7 @@ MonoBehaviour:
       Rewards:
       - Type: 10
         ID: tutorial
-        Value: 1
+        Value: 2
       Music:
         Name: event:/Music/Prologue - Opening
         Parameters: []
@@ -758,136 +759,125 @@ MonoBehaviour:
         Name: 
         Parameters: []
     LinkData:
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Hmm... might as well take in the sights."'
+    - Text: '"Hmm... might as well take in the sights."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Coachman, can we pick up the pace, please?"'
+    - Text: '"Coachman, can we pick up the pace, please?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Coachman, can we pick up the pace, please?"'
+    - Text: '"Coachman, can we pick up the pace, please?"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Reading the letter one more time wouldn''t hurt..."'
+    - Text: '"Reading the letter one more time wouldn''t hurt..."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: <Look out the window>
+    - Text: <Look out the window>
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: <Read Armand's letter>
+    - Text: <Read Armand's letter>
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"This must be the place!"'
+    - Text: '"This must be the place!"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Here goes nothing..."'
+    - Text: '"Here goes nothing..."'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"This is my first time here, is there anything I should know?" <Tutorial>'
+    - Text: '"This is my first time here, is there anything I should know?" <Tutorial>'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"I''m looking for my fiance, Baron Armand de Marbo." <No Tutorial>'
+    - Text: '"I''m looking for my fiance, Baron Armand de Marbo." <No Tutorial>'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: '"Coachman, let''s go! I don''t have all day!"'
+    - Text: '"Coachman, let''s go! I don''t have all day!"'
+      Requirements: []
       Rewards: []
-    - Index: 0
-      Target: 0
-      Text: 
+    - Text: 
+      Requirements: []
       Rewards: []
-    Name: Yvette's Prologue
+    Name: 
+    Late: 0
     _date: 564305184000000000
     Requirements: []
     OneShot: 1
-    Month: 0
-    Day: 0
-    Year: 0
+    Moment:
+      Text: 
+      Background: {fileID: 0}
+      Character1:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Character2:
+        AvatarID: 
+        Pose: 
+        Name: 
+      Speaker: 0
+      Rewards: []
+      Music:
+        Name: 
+        Parameters: []
+      AmbientSFX:
+        Name: 
+        Parameters: []
+      OneShotSFX:
+        Name: 
+        Parameters: []
   _index: -1
-  _isNode: 0
+  _isNode: 1

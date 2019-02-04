@@ -35,18 +35,15 @@ namespace Ambition
 		private void HandleMonth(DateTime month)
 		{
 			CalendarModel model = AmbitionApp.GetModel<CalendarModel>();
-            List<ICalendarEvent> events;
+            PartyVO[] parties;
 
 			_month = month.AddDays(1-month.Day);
 			UpdateDays();
 
 			foreach (CalendarButton day in Days)
 			{
-                if (model.Timeline.TryGetValue(day.Date, out events))
-				{
-                    foreach (ICalendarEvent e in events)
-                        day.AddParty(e as PartyVO);
-				}
+                parties = model.GetEvents<PartyVO>(day.Date);
+                Array.ForEach(parties, day.AddParty);
 			}
 		}
 

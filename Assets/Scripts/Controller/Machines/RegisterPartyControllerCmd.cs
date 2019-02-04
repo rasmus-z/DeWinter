@@ -1,4 +1,5 @@
-﻿using Core;
+﻿using System;
+using Core;
 
 namespace Ambition
 {
@@ -27,16 +28,15 @@ namespace Ambition
             AmbitionApp.RegisterState<SendMessageState, string>("PartyController", "ShowRoom", PartyMessages.SHOW_ROOM);
             AmbitionApp.RegisterState<InvokeMachineState, string>("PartyController", "Conversation", "ConversationController");
             AmbitionApp.RegisterState("PartyController", "ValidateRoom");
-            AmbitionApp.RegisterState<SendMessageState, string>("PartyController", "LeaveParty", PartyMessages.END_PARTY);
+            AmbitionApp.RegisterState<SendMessageState, string>("PartyController", "LeaveParty", PartyMessages.LEAVE_PARTY);
             AmbitionApp.RegisterState<SendMessageState, string>("PartyController", "EndTurn", PartyMessages.END_TURN);
 
 
             AmbitionApp.RegisterLink("PartyController", "EnterParty", "CheckIncidents");
-            AmbitionApp.RegisterLink<CheckIncidentLink>("PartyController", "CheckIncidents", "Incident");
+            AmbitionApp.RegisterLink<DelegateLink, Func<bool>>("PartyController", "CheckIncidents", "Incident", IncidentDelegates.CheckIncidents);
             AmbitionApp.RegisterLink<AmbitionDelegateLink, string>("PartyController", "Incident", "PartyMap", IncidentMessages.END_INCIDENTS);
             AmbitionApp.RegisterLink("PartyController", "CheckIncidents", "PartyMap");
-            AmbitionApp.RegisterLink<AmbitionDelegateLink, string>("PartyController", "PartyMap", "LeaveParty", PartyMessages.LEAVE_PARTY);
-            AmbitionApp.RegisterLink("PartyController", "LeaveParty", "EndTurn");
+            AmbitionApp.RegisterLink<AmbitionDelegateLink, string>("PartyController", "PartyMap", "EndTurn", PartyMessages.LEAVE_PARTY);
             AmbitionApp.RegisterLink<WaitForRoomLink>("PartyController", "PartyMap", "ValidateRoom");
             AmbitionApp.RegisterLink<ValidateRoomLink>("PartyController", "ValidateRoom", "ShowRoom");
             AmbitionApp.RegisterLink("PartyController", "ValidateRoom", "EndTurn");
@@ -49,9 +49,15 @@ namespace Ambition
             AmbitionApp.RegisterState<LoadSceneState, string>("PartyController", "AfterPartyResults", SceneConsts.AFTER_PARTY_SCENE);
             AmbitionApp.RegisterState<SendMessageState, string>("PartyController", "NextDay", CalendarMessages.NEXT_DAY);
             AmbitionApp.RegisterState<InvokeMachineState, string>("PartyController", "ReturnToEstate", "EstateController"); // TODO: Make PartyController sub to GameController
+            AmbitionApp.RegisterState("PartyController", "EndPartyState");
+            AmbitionApp.RegisterState<InvokeMachineState, string>("PartyController", "PostPartyIncident", "IncidentController");
+
 
             AmbitionApp.RegisterLink<AmbitionDelegateLink, string>("PartyController", "PartyMap", "AfterPartyResults", PartyMessages.LEAVE_PARTY);
-            AmbitionApp.RegisterLink<AmbitionDelegateLink, string>("PartyController", "AfterPartyResults", "ReturnToEstate", PartyMessages.END_PARTY);
+            AmbitionApp.RegisterLink<AmbitionDelegateLink, string>("PartyController", "AfterPartyResults", "EndPartyState", PartyMessages.END_PARTY);
+            AmbitionApp.RegisterLink<DelegateLink, Func<bool>>("PartyController", "EndPartyState", "PostPartyIncident", IncidentDelegates.CheckIncidents);
+            AmbitionApp.RegisterLink("PartyController", "EndPartyState", "ReturnToEstate");
+            AmbitionApp.RegisterLink<AmbitionDelegateLink, string>("PartyController", "PostPartyIncident", "ReturnToEstate", IncidentMessages.END_INCIDENTS);
             AmbitionApp.RegisterLink<AmbitionDelegateLink, string>("PartyController", "ReturnToEstate", "NextDay", GameMessages.FADE_OUT_COMPLETE);
         }
     }

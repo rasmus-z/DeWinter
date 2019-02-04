@@ -13,6 +13,8 @@ namespace Ambition
 		public string Scene;
 
         public string PlayerName;
+        
+        private List<string> _status = new List<string>();
 
 		[JsonProperty("livre")]
 		int _livre;
@@ -55,6 +57,15 @@ namespace Ambition
 			}
 		}
 
+        public void SetStatus(string status)
+        {
+            if (!CheckStatus(status)) _status.Add(status);
+        }
+
+        public bool RemoveStatus(string status) => _status.Remove(status);
+
+        public bool CheckStatus(string status) => _status.Contains(status);
+        
         [JsonProperty("vip")]
 		private readonly int[] _vip;
         public int PartyInviteImportance => _vip[Level];

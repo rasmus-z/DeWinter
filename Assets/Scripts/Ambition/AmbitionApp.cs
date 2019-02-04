@@ -224,7 +224,7 @@ namespace Ambition
 			return App.Service<FactorySvc>().Create<Key, Product>(key);
 		}
 
-        public static bool CheckRequirements(CommodityVO[] requirements)
+        public static bool CheckRequirements(RequirementVO[] requirements)
         {
             return App.Service<RequirementSvc>().CheckRequirements(requirements);
         }
@@ -234,9 +234,19 @@ namespace Ambition
             App.Service<RewardFactorySvc>().RegisterReward<T>(type);
         }
 
+        public static void RegisterRequirement(CommodityType type, Func<RequirementVO, bool> del)
+        {
+            App.Service<RequirementSvc>().RegisterRequirement(type, del);
+        }
+
         public static void Reward(CommodityVO commodity)
         {
             App.Service<RewardFactorySvc>().Reward(commodity);
+        }
+
+        public static bool CheckRequirement(RequirementVO commodity)
+        {
+            return App.Service<RequirementSvc>().Check(commodity);
         }
     }
 }

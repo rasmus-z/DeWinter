@@ -59,10 +59,12 @@ namespace Ambition
        
         IEnumerator FadeOut(float time)
        {
-           if (_fade > 1f) _fade = 1f;
-           for (float delta=_fade/time; _fade > 0f; _fade-=delta*Time.deltaTime)
+           if (time > 0f)
            {
-                yield return null;
+               for (float delta=_fade/time; _fade > 0f; _fade-=delta*Time.deltaTime)
+               {
+                    yield return null;
+               }
            }
            _fade = 0f;
            AmbitionApp.SendMessage(GameMessages.FADE_OUT_COMPLETE);
@@ -71,11 +73,13 @@ namespace Ambition
         // Postprocess the image
        IEnumerator FadeIn(float time)
        {
-           if (_fade < 0f) _fade = 0f;
-           for (float delta=(1f-_fade)/time; _fade < 1f; _fade+=delta*Time.deltaTime)
-           {
-                yield return null;
-           }
+            if (time > 0f)
+            {
+                for (float delta = (1f - _fade) / time; _fade < 1f; _fade += delta * Time.deltaTime)
+                {
+                    yield return null;
+                }
+            }
            _fade = 1f;
            AmbitionApp.SendMessage(GameMessages.FADE_IN_COMPLETE);
        }

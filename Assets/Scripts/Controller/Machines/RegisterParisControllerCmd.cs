@@ -17,7 +17,7 @@ namespace Ambition
             AmbitionApp.RegisterState("ParisMapController", "BeginScene");
 
             AmbitionApp.RegisterLink<ChooseLocationLink>("ParisMapController", "Paris", "CheckIncident");
-            AmbitionApp.RegisterLink<CheckIncidentLink>("ParisMapController", "CheckIncident", "Incident");
+            AmbitionApp.RegisterLink<DelegateLink, Func<bool>>("ParisMapController", "CheckIncident", "Incident", IncidentDelegates.CheckIncidents);
             AmbitionApp.RegisterLink("ParisMapController", "CheckIncident", "EnterLocation");
             AmbitionApp.RegisterLink<AmbitionDelegateLink, string>("ParisMapController", "Incident", "EnterLocation", IncidentMessages.END_INCIDENTS);
             AmbitionApp.RegisterLink<FadeOutLink>("ParisMapController", "EnterLocation", "LoadLocation");

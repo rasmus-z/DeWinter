@@ -63,19 +63,14 @@ namespace Ambition
 			RepLossIcon.enabled = rep < 0;
             if(rep >= 0)
             {
-                ReputationText.text = "+";
+                ReputationText.text = "+" + rep.ToString();
             } else
             {
-                ReputationText.text = "";
+                ReputationText.text = rep.ToString();
             }
-            ReputationText.text += rep.ToString();
 			LivreText.text = "+ £" + livre.ToString();
 		}
 
-		public void Done()
-		{
-			AmbitionApp.SendMessage(PartyMessages.END_PARTY);
-            AmbitionApp.GetModel<PartyModel>().Party = null;
-        }
+		public void Done() => AmbitionApp.SendMessage(PartyMessages.END_PARTY);
 	}
 }

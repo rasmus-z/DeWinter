@@ -32,18 +32,6 @@ namespace UFlow
         [SerializeField]
         private bool _isState = false;
 
-        [OnOpenAsset(1)]
-        public static bool OpenMachineConfig(int instanceID, int line)
-        {
-            UConfigurableMachine config = EditorUtility.InstanceIDToObject(instanceID) as UConfigurableMachine;
-            return (config != null) && (null != GraphEditorWindow.Show(config));
-        }
-
-        [MenuItem("Assets/Create/Create Machine Config")]
-        public static void CreateIncident()
-        {
-            ScriptableObjectUtil.CreateScriptableObject<UConfigurableMachine>("New Machine");
-        }
 
         public SerializedObject GraphObject =>
             _obj ?? (_obj = new SerializedObject(this));
@@ -66,10 +54,10 @@ namespace UFlow
             
         }
 
-#endif
         public GUIContent GetGUIContent(int nodeIndex)
         {
             return new GUIContent(this.name);
         }
+#endif
     }
 }
